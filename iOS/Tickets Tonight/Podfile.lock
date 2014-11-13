@@ -1,0 +1,73 @@
+PODS:
+  - Bolts (1.1.3)
+  - CocoaLumberjack (1.9.2):
+    - CocoaLumberjack/Extensions
+  - CocoaLumberjack/Core (1.9.2)
+  - CocoaLumberjack/Extensions (1.9.2):
+    - CocoaLumberjack/Core
+  - CRToast (0.0.7)
+  - Facebook-iOS-SDK (3.20.0):
+    - Bolts (~> 1.0)
+  - FormatterKit (1.7.2):
+    - FormatterKit/AddressFormatter
+    - FormatterKit/ArrayFormatter
+    - FormatterKit/ColorFormatter
+    - FormatterKit/LocationFormatter
+    - FormatterKit/NameFormatter
+    - FormatterKit/OrdinalNumberFormatter
+    - FormatterKit/TimeIntervalFormatter
+    - FormatterKit/UnitOfInformationFormatter
+    - FormatterKit/URLRequestFormatter
+  - FormatterKit/AddressFormatter (1.7.2)
+  - FormatterKit/ArrayFormatter (1.7.2)
+  - FormatterKit/ColorFormatter (1.7.2)
+  - FormatterKit/LocationFormatter (1.7.2)
+  - FormatterKit/NameFormatter (1.7.2)
+  - FormatterKit/OrdinalNumberFormatter (1.7.2)
+  - FormatterKit/TimeIntervalFormatter (1.7.2)
+  - FormatterKit/UnitOfInformationFormatter (1.7.2)
+  - FormatterKit/URLRequestFormatter (1.7.2)
+  - Parse (1.5.0):
+    - Bolts (~> 1.1.3)
+  - ParseFacebookUtils (1.5.0.1):
+    - Facebook-iOS-SDK (~> 3.20)
+    - Parse (~> 1.5.0)
+  - ParseUI (1.0.1):
+    - Parse (~> 1.5.0)
+    - ParseFacebookUtils (~> 1.5.0)
+  - Reachability (3.1.1)
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.7.1)
+  - SVGKit (1.2.0):
+    - CocoaLumberjack
+  - UIColor+FlatColors (0.0.2)
+  - ZLSwipeableView (0.0.5)
+
+DEPENDENCIES:
+  - CocoaLumberjack (~> 1.9)
+  - CRToast
+  - FormatterKit
+  - ParseUI
+  - Reachability
+  - SDWebImage
+  - SVGKit
+  - UIColor+FlatColors
+  - ZLSwipeableView
+
+SPEC CHECKSUMS:
+  Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
+  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
+  CRToast: f9f2c4b29776d68ba24c4d621cba59a83fea921b
+  Facebook-iOS-SDK: 5854404b4b651f612a8ef79ca06d766858f4cb8e
+  FormatterKit: 230f6ae7a6e9ac468cb09b3ac2b7524effc8daaa
+  Parse: 7de25b6f70f0b233e5d25835f62eabfa91e4f9d7
+  ParseFacebookUtils: df2c8634a66883326629099af3690f1862fe126d
+  ParseUI: 7a9d600d93fbb56b1a4019d5a3a0f43d74516a01
+  Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
+  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+  SVGKit: f971efd60d42083f56f5040a745faafc0c3ca626
+  UIColor+FlatColors: 15506ef6472e26a751033f2f2469283800bcb906
+  ZLSwipeableView: d54858e02bbad02e5fb7b3489478d7f92c0628ce
+
+COCOAPODS: 0.34.2

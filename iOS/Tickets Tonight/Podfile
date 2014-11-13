@@ -1,0 +1,24 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'Tickets Tonight' do
+    pod 'ZLSwipeableView'
+    pod 'ParseUI'
+    pod 'SDWebImage'
+    
+    pod 'Reachability'
+    #    pod 'TheAmazingAudioEngine'
+    pod 'FormatterKit'
+    pod 'UIColor+FlatColors'
+    pod 'CRToast'
+    pod 'CocoaLumberjack', '~> 1.9'
+    pod 'SVGKit'
+
+end
+
+target 'Tickets TonightTests' do
+
+end
+

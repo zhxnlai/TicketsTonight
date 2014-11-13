@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-Tickets Tonight-Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Tickets Tonight-CRToast.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Tickets Tonight-CocoaLumberjack.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Tickets Tonight-Facebook-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Tickets Tonight-FormatterKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Tickets Tonight-Parse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Tickets Tonight-ParseFacebookUtils.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Tickets Tonight-ParseUI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Tickets Tonight-Reachability.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Tickets Tonight-SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Tickets Tonight-SVGKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Tickets Tonight-UIColor+FlatColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Tickets Tonight-ZLSwipeableView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Tickets Tonight.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>09D39805C2AC96A8BE2C3376</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>17323B15D51C5B85064BD6DF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1EE982510912EFBE7A133902</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>22F2190DDCA3C465ABD370EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>33F45EA604B007A13C07172D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>394CDAFC924C20E8F7DA3C4F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5078206842491EED24EE2309</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>57B535BDA6A9E23552EC06E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>97F367174864F02382A85523</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B078148E73B569FF0A548CF5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C68E9413EA50D7CD696FD2B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C81579221121BA06D50C54F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2FFA556E6FCEAC632C7B050</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FFA8E7329DA0089CF827A0F5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

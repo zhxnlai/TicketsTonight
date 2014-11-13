@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09B5F71B1A1535C100232545 /* TTExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5F71A1A1535C100232545 /* TTExploreViewController.swift */; };
+		09B5F71D1A1535E000232545 /* TTArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5F71C1A1535E000232545 /* TTArtistViewController.swift */; };
+		09BC3C101A1539DA005B85B4 /* TTFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BC3C0F1A1539DA005B85B4 /* TTFeedViewController.swift */; };
+		09BC3C141A154422005B85B4 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BC3C121A154422005B85B4 /* Parse.framework */; };
+		09BC3C161A154437005B85B4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BC3C151A154437005B85B4 /* AudioToolbox.framework */; };
+		09BC3C181A15443E005B85B4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BC3C171A15443E005B85B4 /* CFNetwork.framework */; };
+		09BC3C1A1A154443005B85B4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BC3C191A154443005B85B4 /* CoreGraphics.framework */; };
+		09BC3C1C1A154448005B85B4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BC3C1B1A154448005B85B4 /* CoreLocation.framework */; };
+		09BC3C1E1A15444D005B85B4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BC3C1D1A15444D005B85B4 /* libz.dylib */; };
+		09BC3C201A154455005B85B4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BC3C1F1A154455005B85B4 /* MobileCoreServices.framework */; };
+		09BC3C221A15445A005B85B4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BC3C211A15445A005B85B4 /* QuartzCore.framework */; };
+		09BC3C241A15445F005B85B4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BC3C231A15445F005B85B4 /* Security.framework */; };
+		09BC3C261A154465005B85B4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BC3C251A154465005B85B4 /* StoreKit.framework */; };
+		09BC3C281A15446D005B85B4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BC3C271A15446D005B85B4 /* SystemConfiguration.framework */; };
+		09BC3C2B1A15493F005B85B4 /* TTCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BC3C2A1A15493F005B85B4 /* TTCardView.swift */; };
+		09BC3C2D1A154EBB005B85B4 /* eventCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BC3C2C1A154EBB005B85B4 /* eventCardView.xib */; };
+		09BC3C2F1A155999005B85B4 /* PlaceholderImageSVG.svg in Resources */ = {isa = PBXBuildFile; fileRef = 09BC3C2E1A155999005B85B4 /* PlaceholderImageSVG.svg */; };
+		09BC3C331A156B22005B85B4 /* TTEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BC3C321A156B22005B85B4 /* TTEventTableViewCell.swift */; };
+		09DF42CF1A152C730051B91E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF42CE1A152C730051B91E /* AppDelegate.swift */; };
+		09DF42D11A152C730051B91E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF42D01A152C730051B91E /* ViewController.swift */; };
+		09DF42D41A152C730051B91E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DF42D21A152C730051B91E /* Main.storyboard */; };
+		09DF42D61A152C730051B91E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09DF42D51A152C730051B91E /* Images.xcassets */; };
+		09DF42D91A152C730051B91E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DF42D71A152C730051B91E /* LaunchScreen.xib */; };
+		09DF42E51A152C730051B91E /* Tickets_TonightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF42E41A152C730051B91E /* Tickets_TonightTests.swift */; };
+		09DF42EF1A152DAC0051B91E /* TTEventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF42EE1A152DAC0051B91E /* TTEventCardView.swift */; };
+		09DF42F71A15307B0051B91E /* TTSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF42F61A15307B0051B91E /* TTSettingsViewController.swift */; };
+		C5EAB7DD130279B71BCC16BA /* libPods-Tickets Tonight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D73921CB4A00A016F8EB164 /* libPods-Tickets Tonight.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		09DF42DF1A152C730051B91E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09DF42C11A152C730051B91E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 09DF42C81A152C730051B91E;
+			remoteInfo = "Tickets Tonight";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09B5F71A1A1535C100232545 /* TTExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTExploreViewController.swift; sourceTree = "<group>"; };
+		09B5F71C1A1535E000232545 /* TTArtistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTArtistViewController.swift; sourceTree = "<group>"; };
+		09BC3C0F1A1539DA005B85B4 /* TTFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTFeedViewController.swift; sourceTree = "<group>"; };
+		09BC3C111A154422005B85B4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		09BC3C121A154422005B85B4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		09BC3C151A154437005B85B4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		09BC3C171A15443E005B85B4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		09BC3C191A154443005B85B4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		09BC3C1B1A154448005B85B4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		09BC3C1D1A15444D005B85B4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		09BC3C1F1A154455005B85B4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		09BC3C211A15445A005B85B4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		09BC3C231A15445F005B85B4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		09BC3C251A154465005B85B4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		09BC3C271A15446D005B85B4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		09BC3C2A1A15493F005B85B4 /* TTCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCardView.swift; sourceTree = "<group>"; };
+		09BC3C2C1A154EBB005B85B4 /* eventCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eventCardView.xib; sourceTree = "<group>"; };
+		09BC3C2E1A155999005B85B4 /* PlaceholderImageSVG.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PlaceholderImageSVG.svg; sourceTree = "<group>"; };
+		09BC3C321A156B22005B85B4 /* TTEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEventTableViewCell.swift; sourceTree = "<group>"; };
+		09DF42C91A152C730051B91E /* Tickets Tonight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tickets Tonight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		09DF42CD1A152C730051B91E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09DF42CE1A152C730051B91E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		09DF42D01A152C730051B91E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		09DF42D31A152C730051B91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		09DF42D51A152C730051B91E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		09DF42D81A152C730051B91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		09DF42DE1A152C730051B91E /* Tickets TonightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tickets TonightTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		09DF42E31A152C730051B91E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09DF42E41A152C730051B91E /* Tickets_TonightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tickets_TonightTests.swift; sourceTree = "<group>"; };
+		09DF42EE1A152DAC0051B91E /* TTEventCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEventCardView.swift; sourceTree = "<group>"; };
+		09DF42F01A152E190051B91E /* Tickets Tonight-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tickets Tonight-Bridging-Header.h"; sourceTree = "<group>"; };
+		09DF42F61A15307B0051B91E /* TTSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTSettingsViewController.swift; sourceTree = "<group>"; };
+		4D73921CB4A00A016F8EB164 /* libPods-Tickets Tonight.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tickets Tonight.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C5A482F44CD95A4E01741A /* Pods-Tickets Tonight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tickets Tonight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tickets Tonight/Pods-Tickets Tonight.debug.xcconfig"; sourceTree = "<group>"; };
+		D808B348325AC46A7B1E2EBF /* Pods-Tickets Tonight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tickets Tonight.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tickets Tonight/Pods-Tickets Tonight.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		09DF42C61A152C730051B91E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09BC3C281A15446D005B85B4 /* SystemConfiguration.framework in Frameworks */,
+				09BC3C261A154465005B85B4 /* StoreKit.framework in Frameworks */,
+				09BC3C241A15445F005B85B4 /* Security.framework in Frameworks */,
+				09BC3C221A15445A005B85B4 /* QuartzCore.framework in Frameworks */,
+				09BC3C201A154455005B85B4 /* MobileCoreServices.framework in Frameworks */,
+				09BC3C1E1A15444D005B85B4 /* libz.dylib in Frameworks */,
+				09BC3C1C1A154448005B85B4 /* CoreLocation.framework in Frameworks */,
+				09BC3C1A1A154443005B85B4 /* CoreGraphics.framework in Frameworks */,
+				09BC3C181A15443E005B85B4 /* CFNetwork.framework in Frameworks */,
+				09BC3C161A154437005B85B4 /* AudioToolbox.framework in Frameworks */,
+				C5EAB7DD130279B71BCC16BA /* libPods-Tickets Tonight.a in Frameworks */,
+				09BC3C141A154422005B85B4 /* Parse.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09DF42DB1A152C730051B91E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09DF42C01A152C730051B91E = {
+			isa = PBXGroup;
+			children = (
+				09DF42CB1A152C730051B91E /* Tickets Tonight */,
+				09DF42E11A152C730051B91E /* Tickets TonightTests */,
+				09DF42CA1A152C730051B91E /* Products */,
+				38B2A52137D37AA61AFC7184 /* Pods */,
+				732E017C473B8DE34035EC7C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		09DF42CA1A152C730051B91E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				09DF42C91A152C730051B91E /* Tickets Tonight.app */,
+				09DF42DE1A152C730051B91E /* Tickets TonightTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		09DF42CB1A152C730051B91E /* Tickets Tonight */ = {
+			isa = PBXGroup;
+			children = (
+				09DF42F81A15307F0051B91E /* Views */,
+				09DF42CE1A152C730051B91E /* AppDelegate.swift */,
+				09DF42D01A152C730051B91E /* ViewController.swift */,
+				09B5F71C1A1535E000232545 /* TTArtistViewController.swift */,
+				09BC3C0F1A1539DA005B85B4 /* TTFeedViewController.swift */,
+				09BC3C321A156B22005B85B4 /* TTEventTableViewCell.swift */,
+				09B5F71A1A1535C100232545 /* TTExploreViewController.swift */,
+				09DF42F61A15307B0051B91E /* TTSettingsViewController.swift */,
+				09DF42D21A152C730051B91E /* Main.storyboard */,
+				09DF42D51A152C730051B91E /* Images.xcassets */,
+				09DF42D71A152C730051B91E /* LaunchScreen.xib */,
+				09DF42CC1A152C730051B91E /* Supporting Files */,
+			);
+			path = "Tickets Tonight";
+			sourceTree = "<group>";
+		};
+		09DF42CC1A152C730051B91E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				09DF42F01A152E190051B91E /* Tickets Tonight-Bridging-Header.h */,
+				09DF42CD1A152C730051B91E /* Info.plist */,
+				09BC3C2E1A155999005B85B4 /* PlaceholderImageSVG.svg */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		09DF42E11A152C730051B91E /* Tickets TonightTests */ = {
+			isa = PBXGroup;
+			children = (
+				09DF42E41A152C730051B91E /* Tickets_TonightTests.swift */,
+				09DF42E21A152C730051B91E /* Supporting Files */,
+			);
+			path = "Tickets TonightTests";
+			sourceTree = "<group>";
+		};
+		09DF42E21A152C730051B91E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				09DF42E31A152C730051B91E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		09DF42F81A15307F0051B91E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09BC3C2A1A15493F005B85B4 /* TTCardView.swift */,
+				09DF42EE1A152DAC0051B91E /* TTEventCardView.swift */,
+				09BC3C2C1A154EBB005B85B4 /* eventCardView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		38B2A52137D37AA61AFC7184 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5C5A482F44CD95A4E01741A /* Pods-Tickets Tonight.debug.xcconfig */,
+				D808B348325AC46A7B1E2EBF /* Pods-Tickets Tonight.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		732E017C473B8DE34035EC7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09BC3C271A15446D005B85B4 /* SystemConfiguration.framework */,
+				09BC3C251A154465005B85B4 /* StoreKit.framework */,
+				09BC3C231A15445F005B85B4 /* Security.framework */,
+				09BC3C211A15445A005B85B4 /* QuartzCore.framework */,
+				09BC3C1F1A154455005B85B4 /* MobileCoreServices.framework */,
+				09BC3C1D1A15444D005B85B4 /* libz.dylib */,
+				09BC3C1B1A154448005B85B4 /* CoreLocation.framework */,
+				09BC3C191A154443005B85B4 /* CoreGraphics.framework */,
+				09BC3C171A15443E005B85B4 /* CFNetwork.framework */,
+				09BC3C151A154437005B85B4 /* AudioToolbox.framework */,
+				09BC3C111A154422005B85B4 /* Bolts.framework */,
+				09BC3C121A154422005B85B4 /* Parse.framework */,
+				4D73921CB4A00A016F8EB164 /* libPods-Tickets Tonight.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		09DF42C81A152C730051B91E /* Tickets Tonight */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09DF42E81A152C730051B91E /* Build configuration list for PBXNativeTarget "Tickets Tonight" */;
+			buildPhases = (
+				E66D06375D690E9F9698C2BD /* Check Pods Manifest.lock */,
+				09DF42C51A152C730051B91E /* Sources */,
+				09DF42C61A152C730051B91E /* Frameworks */,
+				09DF42C71A152C730051B91E /* Resources */,
+				CE40C7B8108DCBB22C79686D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tickets Tonight";
+			productName = "Tickets Tonight";
+			productReference = 09DF42C91A152C730051B91E /* Tickets Tonight.app */;
+			productType = "com.apple.product-type.application";
+		};
+		09DF42DD1A152C730051B91E /* Tickets TonightTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09DF42EB1A152C730051B91E /* Build configuration list for PBXNativeTarget "Tickets TonightTests" */;
+			buildPhases = (
+				09DF42DA1A152C730051B91E /* Sources */,
+				09DF42DB1A152C730051B91E /* Frameworks */,
+				09DF42DC1A152C730051B91E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				09DF42E01A152C730051B91E /* PBXTargetDependency */,
+			);
+			name = "Tickets TonightTests";
+			productName = "Tickets TonightTests";
+			productReference = 09DF42DE1A152C730051B91E /* Tickets TonightTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		09DF42C11A152C730051B91E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Zhixuan Lai";
+				TargetAttributes = {
+					09DF42C81A152C730051B91E = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					09DF42DD1A152C730051B91E = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 09DF42C81A152C730051B91E;
+					};
+				};
+			};
+			buildConfigurationList = 09DF42C41A152C730051B91E /* Build configuration list for PBXProject "Tickets Tonight" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 09DF42C01A152C730051B91E;
+			productRefGroup = 09DF42CA1A152C730051B91E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				09DF42C81A152C730051B91E /* Tickets Tonight */,
+				09DF42DD1A152C730051B91E /* Tickets TonightTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		09DF42C71A152C730051B91E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09DF42D41A152C730051B91E /* Main.storyboard in Resources */,
+				09BC3C2D1A154EBB005B85B4 /* eventCardView.xib in Resources */,
+				09DF42D91A152C730051B91E /* LaunchScreen.xib in Resources */,
+				09BC3C2F1A155999005B85B4 /* PlaceholderImageSVG.svg in Resources */,
+				09DF42D61A152C730051B91E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09DF42DC1A152C730051B91E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CE40C7B8108DCBB22C79686D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tickets Tonight/Pods-Tickets Tonight-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E66D06375D690E9F9698C2BD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		09DF42C51A152C730051B91E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09BC3C331A156B22005B85B4 /* TTEventTableViewCell.swift in Sources */,
+				09BC3C2B1A15493F005B85B4 /* TTCardView.swift in Sources */,
+				09DF42D11A152C730051B91E /* ViewController.swift in Sources */,
+				09BC3C101A1539DA005B85B4 /* TTFeedViewController.swift in Sources */,
+				09B5F71B1A1535C100232545 /* TTExploreViewController.swift in Sources */,
+				09DF42F71A15307B0051B91E /* TTSettingsViewController.swift in Sources */,
+				09DF42EF1A152DAC0051B91E /* TTEventCardView.swift in Sources */,
+				09DF42CF1A152C730051B91E /* AppDelegate.swift in Sources */,
+				09B5F71D1A1535E000232545 /* TTArtistViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09DF42DA1A152C730051B91E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09DF42E51A152C730051B91E /* Tickets_TonightTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		09DF42E01A152C730051B91E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 09DF42C81A152C730051B91E /* Tickets Tonight */;
+			targetProxy = 09DF42DF1A152C730051B91E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		09DF42D21A152C730051B91E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09DF42D31A152C730051B91E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		09DF42D71A152C730051B91E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09DF42D81A152C730051B91E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		09DF42E61A152C730051B91E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		09DF42E71A152C730051B91E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		09DF42E91A152C730051B91E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5C5A482F44CD95A4E01741A /* Pods-Tickets Tonight.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Tickets Tonight/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tickets Tonight/Tickets Tonight-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		09DF42EA1A152C730051B91E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D808B348325AC46A7B1E2EBF /* Pods-Tickets Tonight.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Tickets Tonight/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tickets Tonight/Tickets Tonight-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		09DF42EC1A152C730051B91E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Tickets TonightTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tickets Tonight.app/Tickets Tonight";
+			};
+			name = Debug;
+		};
+		09DF42ED1A152C730051B91E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Tickets TonightTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tickets Tonight.app/Tickets Tonight";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		09DF42C41A152C730051B91E /* Build configuration list for PBXProject "Tickets Tonight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09DF42E61A152C730051B91E /* Debug */,
+				09DF42E71A152C730051B91E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09DF42E81A152C730051B91E /* Build configuration list for PBXNativeTarget "Tickets Tonight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09DF42E91A152C730051B91E /* Debug */,
+				09DF42EA1A152C730051B91E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09DF42EB1A152C730051B91E /* Build configuration list for PBXNativeTarget "Tickets TonightTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09DF42EC1A152C730051B91E /* Debug */,
+				09DF42ED1A152C730051B91E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 09DF42C11A152C730051B91E /* Project object */;
+}

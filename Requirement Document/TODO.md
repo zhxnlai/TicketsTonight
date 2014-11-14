@@ -3,7 +3,7 @@
 * include a few non-trivial UML diagrams for things that can be better
   described with diagrams than with text
   * e.g. for prodcut features: put a few use
-  [case diagrams]((http://en.wikipedia.org/wiki/Use_Case_Diagram) or
+  [case diagrams](http://en.wikipedia.org/wiki/Use_Case_Diagram) or
   [sequence diagrams](http://en.wikipedia.org/wiki/Sequence_diagram)
 
 

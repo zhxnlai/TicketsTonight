@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         if let window = window {            
             
-            self.navController = UINavigationController(rootViewController: ViewController())
+            self.navController = UINavigationController()
             self.presentTabBarController()
             
             window.makeKeyAndVisible()

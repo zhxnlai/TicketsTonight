@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B23" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -149,10 +149,10 @@
                     <exclude reference="i8P-5b-vt2"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="Fhj-w5-UHz"/>
                     <exclude reference="0gH-gh-wkz"/>
                     <exclude reference="PtE-uX-cmj"/>
                     <exclude reference="kxB-fc-sio"/>
-                    <exclude reference="Fhj-w5-UHz"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -160,10 +160,10 @@
                     <include reference="i8P-5b-vt2"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="Fhj-w5-UHz"/>
                     <include reference="0gH-gh-wkz"/>
                     <include reference="PtE-uX-cmj"/>
                     <include reference="kxB-fc-sio"/>
-                    <include reference="Fhj-w5-UHz"/>
                 </mask>
             </variation>
             <connections>

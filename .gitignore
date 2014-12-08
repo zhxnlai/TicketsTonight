@@ -26,4 +26,8 @@
 # ignore OS X system file
 .DS_Store
 
-data/feed_191.20121005.xml
+# ignore XML files
+*.xml
+
+# ignore Vim temp file
+*.swp

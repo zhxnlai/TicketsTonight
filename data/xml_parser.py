@@ -1,20 +1,11 @@
-from parse_rest.connection import register
-from parse_rest.datatypes import Object
-from parse_rest.connection import ParseBatcher
 import xml.etree.ElementTree as ET
 import unicodecsv
-from cStringIO import StringIO
 import sys
 
 
-
-'''
-Subtree: Artists
-Subtree: Categories
-Subtree: Venues
-Subtree: EventsPricePoints
-'''
-
+# iterate the subtree's children to find the attribute we want
+# For example, we want to gather attributes artists, categoryID, eventdate, etc
+# from an event. We use this functionto iterate and gather the values
 def find_value(l, k):
 	for d in l:
 		if d.tag == k:
@@ -31,6 +22,10 @@ def find_value(l, k):
 				return "NOW"
 	return "Undefined"
 
+
+# given the root of the target XML files, build info of artists, categories
+# ,venues, and eventspricespoints. Output the result into CSV format files.
+# Upload the CSV files to parse.com
 def produce_csv(root):
 	f_artist = open('Artists.csv', 'w')
 	w_artist = unicodecsv.writer(f_artist, encoding='utf-8')

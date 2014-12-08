@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "TT": {
+            "applicationId": "Iw6cWX4qJy5Zkp4uDIevWI5sF1BD0JZ3uxQyCUz2", 
+            "masterKey": "paRPZnaTmcOp6g5UetVgHpooaXMNRN1R41FdVcON"
+        }, 
+        "_default": {
+            "link": "TT"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.3.2"
+    }
+}

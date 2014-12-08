@@ -26,13 +26,24 @@
 		09BC3C2F1A155999005B85B4 /* PlaceholderImageSVG.svg in Resources */ = {isa = PBXBuildFile; fileRef = 09BC3C2E1A155999005B85B4 /* PlaceholderImageSVG.svg */; };
 		09BC3C331A156B22005B85B4 /* TTEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BC3C321A156B22005B85B4 /* TTEventTableViewCell.swift */; };
 		09DF42CF1A152C730051B91E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF42CE1A152C730051B91E /* AppDelegate.swift */; };
-		09DF42D11A152C730051B91E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF42D01A152C730051B91E /* ViewController.swift */; };
 		09DF42D41A152C730051B91E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DF42D21A152C730051B91E /* Main.storyboard */; };
 		09DF42D61A152C730051B91E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09DF42D51A152C730051B91E /* Images.xcassets */; };
 		09DF42D91A152C730051B91E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DF42D71A152C730051B91E /* LaunchScreen.xib */; };
 		09DF42E51A152C730051B91E /* Tickets_TonightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF42E41A152C730051B91E /* Tickets_TonightTests.swift */; };
 		09DF42EF1A152DAC0051B91E /* TTEventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF42EE1A152DAC0051B91E /* TTEventCardView.swift */; };
 		09DF42F71A15307B0051B91E /* TTSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF42F61A15307B0051B91E /* TTSettingsViewController.swift */; };
+		09E3EBED1A1AB7EF000022FB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E3EBEC1A1AB7EF000022FB /* main.swift */; };
+		09E3EBF41A1AB835000022FB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E3EBF31A1AB835000022FB /* CFNetwork.framework */; };
+		09E3EBF61A1AB83A000022FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E3EBF51A1AB83A000022FB /* CoreGraphics.framework */; };
+		09E3EBF81A1AB83F000022FB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E3EBF71A1AB83F000022FB /* CoreLocation.framework */; };
+		09E3EBFA1A1AB846000022FB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E3EBF91A1AB846000022FB /* libsqlite3.dylib */; };
+		09E3EBFC1A1AB84A000022FB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E3EBFB1A1AB84A000022FB /* libz.dylib */; };
+		09E3EBFE1A1AB84F000022FB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E3EBFD1A1AB84F000022FB /* QuartzCore.framework */; };
+		09E3EC001A1AB854000022FB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E3EBFF1A1AB854000022FB /* Security.framework */; };
+		09E3EC021A1AB859000022FB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E3EC011A1AB859000022FB /* SystemConfiguration.framework */; };
+		09E3EC051A1AF881000022FB /* TTConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E3EC041A1AF881000022FB /* TTConstants.swift */; };
+		09E3EC061A1AF89A000022FB /* TTConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E3EC041A1AF881000022FB /* TTConstants.swift */; };
+		09E3EC0C1A1AFEFD000022FB /* TTXMLFeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E3EC0B1A1AFEFD000022FB /* TTXMLFeedParser.swift */; };
 		C5EAB7DD130279B71BCC16BA /* libPods-Tickets Tonight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D73921CB4A00A016F8EB164 /* libPods-Tickets Tonight.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +56,18 @@
 			remoteInfo = "Tickets Tonight";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		09E3EBE81A1AB7EF000022FB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		09B5F71A1A1535C100232545 /* TTExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTExploreViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +92,6 @@
 		09DF42C91A152C730051B91E /* Tickets Tonight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tickets Tonight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09DF42CD1A152C730051B91E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09DF42CE1A152C730051B91E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		09DF42D01A152C730051B91E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		09DF42D31A152C730051B91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09DF42D51A152C730051B91E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		09DF42D81A152C730051B91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -79,6 +101,20 @@
 		09DF42EE1A152DAC0051B91E /* TTEventCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEventCardView.swift; sourceTree = "<group>"; };
 		09DF42F01A152E190051B91E /* Tickets Tonight-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tickets Tonight-Bridging-Header.h"; sourceTree = "<group>"; };
 		09DF42F61A15307B0051B91E /* TTSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTSettingsViewController.swift; sourceTree = "<group>"; };
+		09E3EBEA1A1AB7EF000022FB /* TicketsTonightDataImporter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TicketsTonightDataImporter; sourceTree = BUILT_PRODUCTS_DIR; };
+		09E3EBEC1A1AB7EF000022FB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		09E3EBF11A1AB82B000022FB /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/ApplicationServices.framework; sourceTree = DEVELOPER_DIR; };
+		09E3EBF31A1AB835000022FB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		09E3EBF51A1AB83A000022FB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		09E3EBF71A1AB83F000022FB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		09E3EBF91A1AB846000022FB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib/libsqlite3.dylib; sourceTree = DEVELOPER_DIR; };
+		09E3EBFB1A1AB84A000022FB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
+		09E3EBFD1A1AB84F000022FB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		09E3EBFF1A1AB854000022FB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		09E3EC011A1AB859000022FB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		09E3EC041A1AF881000022FB /* TTConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTConstants.swift; sourceTree = "<group>"; };
+		09E3EC071A1AFE96000022FB /* TicketsTonightDataImporter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TicketsTonightDataImporter-Bridging-Header.h"; sourceTree = "<group>"; };
+		09E3EC0B1A1AFEFD000022FB /* TTXMLFeedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTXMLFeedParser.swift; sourceTree = "<group>"; };
 		4D73921CB4A00A016F8EB164 /* libPods-Tickets Tonight.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tickets Tonight.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C5A482F44CD95A4E01741A /* Pods-Tickets Tonight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tickets Tonight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tickets Tonight/Pods-Tickets Tonight.debug.xcconfig"; sourceTree = "<group>"; };
 		D808B348325AC46A7B1E2EBF /* Pods-Tickets Tonight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tickets Tonight.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tickets Tonight/Pods-Tickets Tonight.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +147,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		09E3EBE71A1AB7EF000022FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09E3EC021A1AB859000022FB /* SystemConfiguration.framework in Frameworks */,
+				09E3EC001A1AB854000022FB /* Security.framework in Frameworks */,
+				09E3EBFE1A1AB84F000022FB /* QuartzCore.framework in Frameworks */,
+				09E3EBFC1A1AB84A000022FB /* libz.dylib in Frameworks */,
+				09E3EBFA1A1AB846000022FB /* libsqlite3.dylib in Frameworks */,
+				09E3EBF81A1AB83F000022FB /* CoreLocation.framework in Frameworks */,
+				09E3EBF61A1AB83A000022FB /* CoreGraphics.framework in Frameworks */,
+				09E3EBF41A1AB835000022FB /* CFNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -119,6 +170,7 @@
 			children = (
 				09DF42CB1A152C730051B91E /* Tickets Tonight */,
 				09DF42E11A152C730051B91E /* Tickets TonightTests */,
+				09E3EBEB1A1AB7EF000022FB /* TicketTonightDataImporter */,
 				09DF42CA1A152C730051B91E /* Products */,
 				38B2A52137D37AA61AFC7184 /* Pods */,
 				732E017C473B8DE34035EC7C /* Frameworks */,
@@ -130,6 +182,7 @@
 			children = (
 				09DF42C91A152C730051B91E /* Tickets Tonight.app */,
 				09DF42DE1A152C730051B91E /* Tickets TonightTests.xctest */,
+				09E3EBEA1A1AB7EF000022FB /* TicketsTonightDataImporter */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,12 +192,12 @@
 			children = (
 				09DF42F81A15307F0051B91E /* Views */,
 				09DF42CE1A152C730051B91E /* AppDelegate.swift */,
-				09DF42D01A152C730051B91E /* ViewController.swift */,
 				09B5F71C1A1535E000232545 /* TTArtistViewController.swift */,
 				09BC3C0F1A1539DA005B85B4 /* TTFeedViewController.swift */,
 				09BC3C321A156B22005B85B4 /* TTEventTableViewCell.swift */,
 				09B5F71A1A1535C100232545 /* TTExploreViewController.swift */,
 				09DF42F61A15307B0051B91E /* TTSettingsViewController.swift */,
+				09E3EC041A1AF881000022FB /* TTConstants.swift */,
 				09DF42D21A152C730051B91E /* Main.storyboard */,
 				09DF42D51A152C730051B91E /* Images.xcassets */,
 				09DF42D71A152C730051B91E /* LaunchScreen.xib */,
@@ -190,6 +243,16 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		09E3EBEB1A1AB7EF000022FB /* TicketTonightDataImporter */ = {
+			isa = PBXGroup;
+			children = (
+				09E3EBEC1A1AB7EF000022FB /* main.swift */,
+				09E3EC0B1A1AFEFD000022FB /* TTXMLFeedParser.swift */,
+				09E3EC071A1AFE96000022FB /* TicketsTonightDataImporter-Bridging-Header.h */,
+			);
+			path = TicketTonightDataImporter;
+			sourceTree = "<group>";
+		};
 		38B2A52137D37AA61AFC7184 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +265,15 @@
 		732E017C473B8DE34035EC7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09E3EC011A1AB859000022FB /* SystemConfiguration.framework */,
+				09E3EBFF1A1AB854000022FB /* Security.framework */,
+				09E3EBFD1A1AB84F000022FB /* QuartzCore.framework */,
+				09E3EBFB1A1AB84A000022FB /* libz.dylib */,
+				09E3EBF91A1AB846000022FB /* libsqlite3.dylib */,
+				09E3EBF71A1AB83F000022FB /* CoreLocation.framework */,
+				09E3EBF51A1AB83A000022FB /* CoreGraphics.framework */,
+				09E3EBF31A1AB835000022FB /* CFNetwork.framework */,
+				09E3EBF11A1AB82B000022FB /* ApplicationServices.framework */,
 				09BC3C271A15446D005B85B4 /* SystemConfiguration.framework */,
 				09BC3C251A154465005B85B4 /* StoreKit.framework */,
 				09BC3C231A15445F005B85B4 /* Security.framework */,
@@ -259,6 +331,23 @@
 			productReference = 09DF42DE1A152C730051B91E /* Tickets TonightTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		09E3EBE91A1AB7EF000022FB /* TicketsTonightDataImporter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09E3EBF01A1AB7EF000022FB /* Build configuration list for PBXNativeTarget "TicketsTonightDataImporter" */;
+			buildPhases = (
+				09E3EBE61A1AB7EF000022FB /* Sources */,
+				09E3EBE71A1AB7EF000022FB /* Frameworks */,
+				09E3EBE81A1AB7EF000022FB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TicketsTonightDataImporter;
+			productName = TicketTonightDataImporter;
+			productReference = 09E3EBEA1A1AB7EF000022FB /* TicketsTonightDataImporter */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -274,6 +363,9 @@
 					09DF42DD1A152C730051B91E = {
 						CreatedOnToolsVersion = 6.1;
 						TestTargetID = 09DF42C81A152C730051B91E;
+					};
+					09E3EBE91A1AB7EF000022FB = {
+						CreatedOnToolsVersion = 6.1;
 					};
 				};
 			};
@@ -292,6 +384,7 @@
 			targets = (
 				09DF42C81A152C730051B91E /* Tickets Tonight */,
 				09DF42DD1A152C730051B91E /* Tickets TonightTests */,
+				09E3EBE91A1AB7EF000022FB /* TicketsTonightDataImporter */,
 			);
 		};
 /* End PBXProject section */
@@ -358,12 +451,12 @@
 			files = (
 				09BC3C331A156B22005B85B4 /* TTEventTableViewCell.swift in Sources */,
 				09BC3C2B1A15493F005B85B4 /* TTCardView.swift in Sources */,
-				09DF42D11A152C730051B91E /* ViewController.swift in Sources */,
 				09BC3C101A1539DA005B85B4 /* TTFeedViewController.swift in Sources */,
 				09B5F71B1A1535C100232545 /* TTExploreViewController.swift in Sources */,
 				09DF42F71A15307B0051B91E /* TTSettingsViewController.swift in Sources */,
 				09DF42EF1A152DAC0051B91E /* TTEventCardView.swift in Sources */,
 				09DF42CF1A152C730051B91E /* AppDelegate.swift in Sources */,
+				09E3EC051A1AF881000022FB /* TTConstants.swift in Sources */,
 				09B5F71D1A1535E000232545 /* TTArtistViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +466,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				09DF42E51A152C730051B91E /* Tickets_TonightTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09E3EBE61A1AB7EF000022FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09E3EBED1A1AB7EF000022FB /* main.swift in Sources */,
+				09E3EC0C1A1AFEFD000022FB /* TTXMLFeedParser.swift in Sources */,
+				09E3EC061A1AF89A000022FB /* TTConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +657,44 @@
 			};
 			name = Release;
 		};
+		09E3EBEE1A1AB7EF000022FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "TicketTonightDataImporter/TicketsTonightDataImporter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		09E3EBEF1A1AB7EF000022FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "TicketTonightDataImporter/TicketsTonightDataImporter-Bridging-Header.h";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -583,6 +724,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		09E3EBF01A1AB7EF000022FB /* Build configuration list for PBXNativeTarget "TicketsTonightDataImporter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09E3EBEE1A1AB7EF000022FB /* Debug */,
+				09E3EBEF1A1AB7EF000022FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

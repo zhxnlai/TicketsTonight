@@ -22,3 +22,7 @@ target 'Tickets TonightTests' do
 
 end
 
+target 'Tickets Tonight' do
+    pod 'ParseUI'
+    
+end

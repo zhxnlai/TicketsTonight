@@ -136,6 +136,7 @@ static float cachedDevicePixelsPerInch;
 	NSString *platform = [NSString stringWithUTF8String:machine];
 	free(machine);
 	
+//    NSLog(@"platform: %@", platform);
 	if( [platform hasPrefix:@"iPhone1"]
 	|| [platform hasPrefix:@"iPhone2"]
 	|| [platform hasPrefix:@"iPhone3"])
@@ -143,7 +144,8 @@ static float cachedDevicePixelsPerInch;
 	
 	if( [platform hasPrefix:@"iPhone4"]
 	|| [platform hasPrefix:@"iPhone5"]
-	|| [platform hasPrefix:@"iPhone6"])
+    || [platform hasPrefix:@"iPhone6"]
+    || [platform hasPrefix:@"iPhone7"])
 		return 326.0f;
 	
 	if( [platform hasPrefix:@"iPhone"]) // catch-all for higher-end devices not yet existing

@@ -75,6 +75,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         if let window = window {            
             
+//            [[UINavigationBar appearance] setBarTintColor:[UIColor flatPeterRiverColor]];
+//            [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+//            //    [[UINavigationBar appearance] setTranslucent:NO];
+//            [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+            
+            
+            UINavigationBar.appearance().barTintColor = kTTBarColor
+            UINavigationBar.appearance().tintColor = UIColor.flatCloudsColor()
+            UINavigationBar.appearance().barStyle = .Black
+            
+            
+            UITabBar.appearance().barTintColor = kTTBarColor
+            //            UITabBar.appearance().tintColor = UIColor.flatCloudsColor()
+            UITabBar.appearance().barStyle = .Black
+
+            UITabBar.appearance().tintColor = UIColor.flatAlizarinColor()
+////            UITabBar.appearance().tintColor = UIColor.flatMidnightBlueColor()
+
             self.navController = UINavigationController()
             self.presentTabBarController()
             

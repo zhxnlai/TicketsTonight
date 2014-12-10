@@ -10,11 +10,6 @@ import UIKit
 
 class TTEventTableViewCell: TTImageTableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
@@ -26,16 +21,31 @@ class TTEventTableViewCell: TTImageTableViewCell {
             if let event = object {
                 self.textLabel!.text = event[kTTEventNameKey] as? String
                 let artistId = event[kTTEventPrimaryArtistKey] as? String
-                let artistIdInt = artistId!.toInt()
+                let artistIdInt = artistId?.toInt()
                 let venueId = event[kTTEventVenueIdKey] as? String
+                let venueIdInt = venueId?.toInt()
                 
-                findArtistById(artistIdInt!, { (object, error) -> () in
-                    if let artist = object {
-                        self.detailTextLabel!.text = artist[kTTArtistNameKey] as? String
-                        self.imageURL = artist[kTTArtistImageURLKey] as? String
-                    }
-                })
+                if let actualId = venueIdInt {
+                    findVenueById(actualId, { (object, error) -> () in
+                        if let venue = object {
+                            self.imageURL = venue[kTTVenueImageURLKey] as? String
+                        }
+                    })
+                }
+                if let actualId = artistIdInt {
+                    findArtistById(actualId, { (object, error) -> () in
+                        if let artist = object {
+                            self.detailTextLabel!.text = artist[kTTArtistNameKey] as? String
+                            //                        self.imageURL = artist[kTTArtistImageURLKey] as? String
+                        }
+                    })
+                }
+                
+                self.setNeedsLayout()
+                self.layoutIfNeeded()
+
             }
         }
     }
+    
 }

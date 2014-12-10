@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FFA8E7329DA0089CF827A0F5"
+               BlueprintIdentifier = "ABDAC5EEBB14A125B46282D8"
                BuildableName = "libPods-Tickets Tonight-FormatterKit.a"
                BlueprintName = "Pods-Tickets Tonight-FormatterKit"
                ReferencedContainer = "container:Pods.xcodeproj">

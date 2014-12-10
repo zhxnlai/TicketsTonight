@@ -16,3 +16,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #import "SVGKit.h"
+
+#import "SVWebViewController.h"
+
+#import "FXBlurView.h"

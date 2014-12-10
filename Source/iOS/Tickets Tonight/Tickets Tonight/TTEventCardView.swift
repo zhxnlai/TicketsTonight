@@ -8,27 +8,99 @@
 
 import UIKit
 
-let kEventPerformanceNameKey = "PerformanceName"
-let kEventVenueImageURLKey = "VenueImageURL"
-let kEventArtistNameKey = "ArtistName"
-let kEventArtistImageURLKey = "ArtistImageURL"
+protocol TTEventCardViewDelegate: class {
+    func eventCardDidTap(card: TTEventCardView)
+}
 
 class TTEventCardView: TTCardView {
-    // in the row: name, date, time (reviews)
-    // venue: name, image, address (street, city, state, zip code)
-    // artist: name, category
     
-    @IBOutlet weak var VenueImageView: UIImageView!
-    @IBOutlet weak var artistImageView: UIImageView!
+    weak var delegate: TTEventCardViewDelegate?
+    var tapGestureRecognizer: UITapGestureRecognizer!
     
-    @IBOutlet weak var performanceNameLabel: UILabel!
-    @IBOutlet weak var artistNameLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
+    var artistImageView: UIImageView!
+    var performanceNameLabel: UILabel!
+    var artistNameLabel: UILabel!
+    var timeLabel: UILabel!
+    var locationLabel: UILabel!
+    var similarArtistLabel: UILabel!
+
+    var containerView: UIView!
     
-    @IBOutlet weak var locationLabel: UILabel!
+    var object:PFObject? {
+        didSet {
+            if let event = object {
+                self.performanceNameLabel?.text = event[kTTEventNameKey] as? String
+
+                let venueId = event[kTTEventVenueIdKey] as String
+                findVenueById(venueId.toInt()!, { (object, error) -> () in
+                    if let venue = object {
+                        // set location
+                        let venueText = "\(venue[kTTVenueCityKey]!), \(venue[kTTVenueStateKey]!)"
+                        self.locationLabel?.text = venueText
+                    }
+                })
+
+                let artistId = event[kTTEventPrimaryArtistKey] as String
+                findArtistById(artistId.toInt()!, { (object, error) -> () in
+                    if let artist = object {
+                        self.artistNameLabel?.text = artist[kTTArtistNameKey] as? String
+                        let artistImgUrl = artist[kTTArtistImageURLKey] as? String
+                        self.artistImageView.sd_setImageWithURL(NSURL(string: artistImgUrl!), placeholderImage: placeholderImg)
+                    }
+                })
+                
+                self.artistImageView.contentMode = .ScaleAspectFill
+                self.artistImageView.clipsToBounds = true
+            }
+            
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        containerView = UIView(frame: frame)
+        self.addSubview(containerView)
+        let cornerRadius = CGFloat(10);
+        var maskFrame = frame
+        maskFrame.size.height += cornerRadius
+        var maskLayer = CALayer()
+        maskLayer.cornerRadius = cornerRadius
+        maskLayer.backgroundColor = UIColor.blackColor().CGColor
+        maskLayer.frame = maskFrame
+        containerView.layer.mask = maskLayer
+        
+        let artistImgHeight = CGRectGetHeight(frame)*2/3.0
+        artistImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(frame), height: artistImgHeight))
+        containerView.addSubview(artistImageView)
+        
+        let w = CGFloat(10.0)
+//        artistNameLabel = UILabel(frame: CGRect(x: w, y: artistImgHeight, width: CGRectGetWidth(frame)-2*w, height: CGRectGetHeight(frame)-artistImgHeight))
+//        containerView.addSubview(artistNameLabel)
+        
+        let labelHeight = (CGRectGetHeight(frame)-artistImgHeight)/3
+        
+        performanceNameLabel = UILabel(frame: CGRect(x: w, y: artistImgHeight, width: CGRectGetWidth(frame)-2*w, height: labelHeight))
+        performanceNameLabel.textColor = kTTPrimaryTextColor
+        performanceNameLabel.font = UIFont.systemFontOfSize(22)
+        containerView.addSubview(performanceNameLabel)
+
+        locationLabel = UILabel(frame: CGRect(x: w, y: artistImgHeight+labelHeight, width: CGRectGetWidth(frame)-2*w, height: labelHeight))
+        locationLabel.font = UIFont.systemFontOfSize(22)
+        locationLabel.textColor = kTTSecondaryTextColor
+        containerView.addSubview(locationLabel)
+
+        similarArtistLabel = UILabel(frame: CGRect(x: w, y: artistImgHeight+labelHeight*2, width: CGRectGetWidth(frame)-2*w, height: labelHeight))
+        similarArtistLabel.textColor = kTTSecondaryTextColor
+        similarArtistLabel.text = "Similar to "
+        containerView.addSubview(similarArtistLabel)
+
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("didTap:"))
+        containerView.addGestureRecognizer(tapGestureRecognizer)
+        
+        
+        cardColor = kTTBarColor
+        artistNameLabel?.textColor = kTTPrimaryTextColor
+        performanceNameLabel?.textColor = kTTPrimaryTextColor
         
     }
 
@@ -36,38 +108,11 @@ class TTEventCardView: TTCardView {
         super.init(coder: aDecoder)
     }
     
-    var event:Dictionary<String,String>? {
-//        get {
-//            self.event
-//        }
-        didSet {
-//            self.event = newEvent
-            self.updateView(self.event!)
-        }
-    }
     
-    func updateView(event:Dictionary<String,String>) {
-        
-        if let venueImageURL = event[kEventVenueImageURLKey] {
-            self.VenueImageView.sd_setImageWithURL(NSURL(string: venueImageURL), placeholderImage: SVGKImage(named: "PlaceholderImageSVG").UIImage)
-        }
-        
-        if let artistImageURL = event[kEventArtistImageURLKey] {
-            self.artistImageView.sd_setImageWithURL(NSURL(string: artistImageURL), placeholderImage: SVGKImage(named: "PlaceholderImageSVG").UIImage)
-        }
-        
-        if let performanceName = event[kEventPerformanceNameKey] {
-            self.performanceNameLabel.text = performanceName
-        }
-        if let artistName = event[kEventArtistNameKey] {
-            self.artistNameLabel.text = artistName
-        }
-
-        self.artistImageView.contentMode = .ScaleAspectFill
-        self.artistImageView.clipsToBounds = true
-        self.VenueImageView.contentMode = .ScaleAspectFill
-        self.VenueImageView.clipsToBounds = true
-
+    // MARK: - Action
+    func didTap(recognizer:UITapGestureRecognizer) {
+        self.delegate?.eventCardDidTap(self)
     }
+
     
 }

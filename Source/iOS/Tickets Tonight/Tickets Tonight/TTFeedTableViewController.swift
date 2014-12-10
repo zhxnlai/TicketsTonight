@@ -10,8 +10,10 @@ import UIKit
 
 let cellIdentifier = "cell"
 class TTFeedTableViewController: TTEventsTableViewController {
-    var sectionSortedKeys: Array<String> = Array<String>()
-    var sections: Dictionary<String, Array<PFObject>> = Dictionary<String, Array<PFObject>>()
+    
+
+    var sectionSortedKeys: Array<NSDate> = Array<NSDate>()
+    var sections: Dictionary<NSDate, Array<PFObject>> = Dictionary<NSDate, Array<PFObject>>()
     override init(style: UITableViewStyle) {
         super.init(style: style)
         title = "Feed"
@@ -27,27 +29,58 @@ class TTFeedTableViewController: TTEventsTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.backgroundColor = kTTBackgroundColor
     }
 
     // MARK: - data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return sections.count
-    }
-    
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionSortedKeys[section]
+        return sections.count+1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section>=sections.count {return 1}
         return sections[sectionSortedKeys[section]]!.count
     }
-    
+        
+    override func tableView(tableView: UITableView!, cellForNextPageAtIndexPath indexPath: NSIndexPath!) -> PFTableViewCell! {
+        var cell = super.tableView(tableView, cellForNextPageAtIndexPath: indexPath)
+        cell.backgroundColor = kTTBackgroundColor
+        cell.textLabel?.textColor = kTTPrimaryTextColor
+        return cell
+    }
+
     // MARK: - delegate
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
-//        
-//    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+        if indexPath.section>=sections.count {
+            loadNextPage()
+        }
+    }
+    
+    
+    
+    
+    // MARK: - header
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(40)
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section>=sections.count {return "More"}
+        return NSDateFormatter.localizedStringFromDate(sectionSortedKeys[section], dateStyle: .FullStyle, timeStyle: .NoStyle)
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var label = UILabel(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.frame), height: self.tableView(tableView, heightForHeaderInSection: section)))
+        label.backgroundColor = kTTBackgroundColor
+        label.text = "   \(self.tableView(tableView, titleForHeaderInSection: section)!)"
+        label.textColor = kTTPrimaryTextColor
+        label.font = UIFont.boldSystemFontOfSize(16)
+        return label
+    }
+    
+    
     
     // MARK: - Parse.com Logic
     override func queryForTable() -> PFQuery! {
@@ -58,7 +91,6 @@ class TTFeedTableViewController: TTEventsTableViewController {
             return query;
         }
         
-        //        query.whereKey(, equalTo: pId)
         query.orderByDescending(kTTEventDateObjectKey)
         query.cachePolicy = kPFCachePolicyCacheElseNetwork;
         
@@ -72,8 +104,11 @@ class TTFeedTableViewController: TTEventsTableViewController {
         sections.removeAll()
         for anyObject in objects {
             if let object:PFObject = anyObject as? PFObject {
-                var date = object[kTTEventDateKey] as String
-                
+                let dateObject = object[kTTEventDateObjectKey] as NSDate
+                let dateComponents = NSCalendar.currentCalendar().components(.YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit | .WeekdayCalendarUnit , fromDate: dateObject)
+                let date = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
+                //NSDateFormatter.localizedStringFromDate(dateObject, dateStyle: .MediumStyle, timeStyle: .NoStyle)
+
                 var array = sections[date]
                 if var actualArray = array {
                     actualArray.append(object)
@@ -84,16 +119,20 @@ class TTFeedTableViewController: TTEventsTableViewController {
             }
         }
         
-        sectionSortedKeys = Array<String>(sections.keys).sorted({ (A, B) -> Bool in
-            return A>B
+        sectionSortedKeys = Array<NSDate>(sections.keys).sorted({ (A, B) -> Bool in
+            return A.laterDate(B) == A
         })
         tableView.reloadData()
     }
     
     override func objectAtIndexPath(indexPath: NSIndexPath!) -> PFObject! {
+        if indexPath.section>=sections.count {return nil}
         return sections[sectionSortedKeys[indexPath.section]]![indexPath.row]
     }
     
+    func _indexPathForPaginationCell() -> NSIndexPath {
+        return NSIndexPath(forRow: 0, inSection: sections.count)
+    }
 
     
 }

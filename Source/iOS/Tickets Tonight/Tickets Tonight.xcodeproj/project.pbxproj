@@ -49,6 +49,7 @@
 		09BC3C2D1A154EBB005B85B4 /* eventCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BC3C2C1A154EBB005B85B4 /* eventCardView.xib */; };
 		09BC3C2F1A155999005B85B4 /* PlaceholderImageSVG.svg in Resources */ = {isa = PBXBuildFile; fileRef = 09BC3C2E1A155999005B85B4 /* PlaceholderImageSVG.svg */; };
 		09BC3C331A156B22005B85B4 /* TTEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BC3C321A156B22005B85B4 /* TTEventTableViewCell.swift */; };
+		09DC6BA11A385AFF00ED25A3 /* TTArtistEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC6BA01A385AFF00ED25A3 /* TTArtistEventTableViewCell.swift */; };
 		09DF42CF1A152C730051B91E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF42CE1A152C730051B91E /* AppDelegate.swift */; };
 		09DF42D41A152C730051B91E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DF42D21A152C730051B91E /* Main.storyboard */; };
 		09DF42D91A152C730051B91E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DF42D71A152C730051B91E /* LaunchScreen.xib */; };
@@ -114,6 +115,7 @@
 		09BC3C2C1A154EBB005B85B4 /* eventCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eventCardView.xib; sourceTree = "<group>"; };
 		09BC3C2E1A155999005B85B4 /* PlaceholderImageSVG.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PlaceholderImageSVG.svg; sourceTree = "<group>"; };
 		09BC3C321A156B22005B85B4 /* TTEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEventTableViewCell.swift; sourceTree = "<group>"; };
+		09DC6BA01A385AFF00ED25A3 /* TTArtistEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTArtistEventTableViewCell.swift; sourceTree = "<group>"; };
 		09DF42C91A152C730051B91E /* Tickets Tonight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tickets Tonight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09DF42CD1A152C730051B91E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09DF42CE1A152C730051B91E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -217,9 +219,8 @@
 		09910E2A1A350DF600D8DE30 /* TabelViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				09910E2F1A35100300D8DE30 /* TTImageTableViewCell.swift */,
-				09910E311A35102500D8DE30 /* TTArtistTableViewCell.swift */,
-				09BC3C321A156B22005B85B4 /* TTEventTableViewCell.swift */,
+				09DC6BA01A385AFF00ED25A3 /* TTArtistEventTableViewCell.swift */,
+				09F8AD701A37BCF100BB1BF2 /* ImageTVCells */,
 			);
 			name = TabelViewCells;
 			sourceTree = "<group>";
@@ -308,6 +309,16 @@
 				09910E2A1A350DF600D8DE30 /* TabelViewCells */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		09F8AD701A37BCF100BB1BF2 /* ImageTVCells */ = {
+			isa = PBXGroup;
+			children = (
+				09910E2F1A35100300D8DE30 /* TTImageTableViewCell.swift */,
+				09910E311A35102500D8DE30 /* TTArtistTableViewCell.swift */,
+				09BC3C321A156B22005B85B4 /* TTEventTableViewCell.swift */,
+			);
+			name = ImageTVCells;
 			sourceTree = "<group>";
 		};
 		38B2A52137D37AA61AFC7184 /* Pods */ = {
@@ -502,6 +513,7 @@
 				09910E321A35102500D8DE30 /* TTArtistTableViewCell.swift in Sources */,
 				09926B301A365CD700068661 /* TTUtils.swift in Sources */,
 				09910E3A1A354E0300D8DE30 /* TTCategoryArtistsTableViewController.swift in Sources */,
+				09DC6BA11A385AFF00ED25A3 /* TTArtistEventTableViewCell.swift in Sources */,
 				09910E1F1A34D79600D8DE30 /* Layout.swift in Sources */,
 				09910E1B1A34D79600D8DE30 /* Edge.swift in Sources */,
 				09DF42F71A15307B0051B91E /* TTSettingsTableViewController.swift in Sources */,

@@ -15,14 +15,12 @@ target 'Tickets Tonight' do
     pod 'CRToast'
     pod 'CocoaLumberjack', '~> 1.9'
     pod 'SVGKit'
-
+    
+    pod 'SVWebViewController'
+    pod 'FXBlurView'
 end
 
 target 'Tickets TonightTests' do
 
 end
 
-target 'Tickets Tonight' do
-    pod 'ParseUI'
-    
-end

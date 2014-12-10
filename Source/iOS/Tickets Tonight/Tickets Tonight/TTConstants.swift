@@ -8,9 +8,14 @@
 
 import Foundation
 
+let kTTBarColor = UIColor(red: 0.145, green: 0.157, blue: 0.176, alpha: 1)
+let kTTBackgroundColor = UIColor(red: 0.176, green: 0.192, blue: 0.216, alpha: 1)
+let kTTPrimaryTextColor = UIColor(red: 0.863, green: 0.863, blue: 0.863, alpha: 1)
+let kTTSecondaryTextColor = UIColor(red: 0.529, green: 0.553, blue: 0.588, alpha: 1)
 
+
+// MARK: - Parse
 let kTTUserRunCountKey = "RunCount"
-
 
 let kTTFeedObjectIDKey = "ID"
 

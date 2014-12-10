@@ -22,6 +22,7 @@ class TTArtistsTableViewController: PFQueryTableViewController {
     }
     
     override func viewDidLoad() {
+        tableView.separatorStyle = .None;
         super.viewDidLoad()
     }
     
@@ -52,6 +53,11 @@ class TTArtistsTableViewController: PFQueryTableViewController {
         navigationController!.pushViewController(artistViewController, animated: true);
 
     }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return TTArtistTableViewCell.heightForCell()
+    }
+
     
     // MARK: - Parse.com Logic
     override func queryForTable() -> PFQuery! {

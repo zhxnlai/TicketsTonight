@@ -117,7 +117,7 @@
                         </mask>
                     </variation>
                     <variation key="widthClass=compact" misplaced="YES">
-                        <rect key="frame" x="246" y="406" width="85" height="21"/>
+                        <rect key="frame" x="246" y="408" width="85" height="21"/>
                         <mask key="constraints">
                             <include reference="Eed-Yp-kmJ"/>
                             <include reference="J21-qE-y6u"/>

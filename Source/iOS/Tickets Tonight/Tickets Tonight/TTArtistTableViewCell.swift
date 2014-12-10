@@ -14,6 +14,9 @@ class TTArtistTableViewCell: TTImageTableViewCell {
             if let artist = object {
                 self.textLabel!.text = artist[kTTArtistNameKey] as? String
                 self.imageURL = artist[kTTArtistImageURLKey] as? String
+                
+                self.setNeedsLayout()
+                self.layoutIfNeeded()
             }
         }
     }

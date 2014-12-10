@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import MapKit
+import Darwin
 
 func findArtistById(Id:Int, withBlock: (PFObject?, NSError?) -> ()) {
     var query = PFQuery(className: kTTArtistKey)
@@ -30,4 +32,13 @@ func findVenueById(Id:Int, withBlock: (PFObject?, NSError?) -> ()) {
         
     })
     
+}
+
+let placeholderImg:UIImage = SVGKImage(named: "PlaceholderImageSVG").UIImage
+
+func spanForDistanceAtCoordinate(coord: CLLocationCoordinate2D, xDistance: Double, yDistance: Double) -> MKCoordinateSpan {
+    let kilometersPerDegree = Double(111)
+    let xDegree = CLLocationDegrees(xDistance/kilometersPerDegree)
+    let yDegree = CLLocationDegrees(yDistance/(kilometersPerDegree * cos(coord.latitude * M_PI / 180.0)))
+    return MKCoordinateSpan(latitudeDelta: xDegree, longitudeDelta: yDegree)
 }

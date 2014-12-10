@@ -35,7 +35,9 @@ class TTCardView: UIView {
         self.layer.shadowOffset = shadowOffset
         self.layer.shadowRadius = CGFloat(shadowBlurRadius)
         self.layer.shouldRasterize = true
-
+        
+        
+        
     }
     
     override func drawRect(rect: CGRect) {

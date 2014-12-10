@@ -22,6 +22,7 @@ class TTEventsTableViewController: PFQueryTableViewController {
     }
     
     override func viewDidLoad() {
+        tableView.separatorStyle = .None;
         super.viewDidLoad()
     }
     
@@ -44,17 +45,20 @@ class TTEventsTableViewController: PFQueryTableViewController {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        
         var object = self.objectAtIndexPath(indexPath)
         if let event = object {
-            var eventViewController = TTEventViewController(style: .Grouped);
+            var eventViewController = TTEventViewController();
             eventViewController.object = event
             navigationController!.pushViewController(eventViewController, animated: true);
-
         }
 
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return TTEventTableViewCell.heightForCell()
+    }
+    
+
     // MARK: - Parse.com Logic
     override func queryForTable() -> PFQuery! {
         fatalError("queryForTable() has not been implemented")

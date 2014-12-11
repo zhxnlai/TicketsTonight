@@ -10,21 +10,17 @@ import UIKit
 
 class TTArtistViewController: TTEventsTableViewController {
     
-    var backgroundImageView:UIImageView!
+    var headerView:UIImageView = UIImageView()
+    var backgroundImageView:UIImageView = UIImageView()
     
     var object:PFObject? {
         didSet {
             if let artist = object {
                 title = artist[kTTArtistNameKey] as? String
                 
-                let width = self.view.frame.size.width
-                var headerView = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: width*2/3.0))
-                headerView.contentMode = .ScaleAspectFill
-                headerView.clipsToBounds = true
-
                 let artistImgUrl = artist[kTTArtistImageURLKey] as String
                 headerView.sd_setImageWithURL(NSURL(string: artistImgUrl), placeholderImage: SVGKImage(named: "PlaceholderImageSVG").UIImage)
-                tableView.tableHeaderView = headerView
+                
                 self.backgroundImageView.sd_setImageWithURL(NSURL(string: artistImgUrl), placeholderImage: placeholderImg, completed: { (image, error, cacheType, url) -> Void in
                     self.backgroundImageView.image = image.blurredImageWithRadius(80, iterations: 2, tintColor: UIColor.blackColor())
                 })
@@ -44,15 +40,40 @@ class TTArtistViewController: TTEventsTableViewController {
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     override func viewDidLoad() {
         tableView.separatorStyle = .None;
         super.viewDidLoad()
         
-        backgroundImageView = UIImageView(frame: view.bounds)
+        backgroundImageView.frame = view.bounds
         tableView.backgroundView = backgroundImageView
         
-    }
+        let width = self.view.frame.size.width
+        headerView.contentMode = .ScaleAspectFill
+        headerView.clipsToBounds = true
+        self.tableView.setParallaxHeaderView(headerView, mode: .Fill, height: width*2/3.0)
 
+    }
+    
+    // MARK: - Action
+    func favoriteSwitchAction(aSwitch: UISwitch) {
+        if let artist = object {
+            if (aSwitch.on && PFUser.currentUser() != nil) {
+                PFUser.currentUser().addUniqueObject(artist, forKey: kTTUserFavoriteArtistsKey)
+                PFUser.currentUser().addUniqueObject(String(Int(artist.objectForKey(kTTArtistIDKey) as NSNumber)), forKey: kTTUserFavoriteArtistIdsKey)
+                PFUser.currentUser().saveEventually()
+            } else {
+                PFUser.currentUser().removeObject(artist, forKey: kTTUserFavoriteArtistsKey)
+                PFUser.currentUser().removeObject(String(Int(artist.objectForKey(kTTArtistIDKey) as NSNumber)), forKey: kTTUserFavoriteArtistIdsKey)
+                PFUser.currentUser().saveEventually()
+            }
+        }
+    }
+    
+    // MARK: - scrollview delegate
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.tableView.shouldPositionParallaxHeader()
+    }
     
     // MARK: - data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -67,8 +88,10 @@ class TTArtistViewController: TTEventsTableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section==0 {
             return "Favorite"
+        } else if section == 1 {
+            return objects.count > 0 ? "Events" : "No Event"
         }
-        return "Events"
+        return ""
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -95,15 +118,29 @@ class TTArtistViewController: TTEventsTableViewController {
             if cell==nil {
                 cell = PFTableViewCell(style: .Value1, reuseIdentifier: cellIdentifier)
             }
+            cell.textLabel?.text = "Favorite Artist"
             cell.textLabel?.textColor = kTTPrimaryTextColor
+            cell.selectionStyle = .None
             
-//            cell.accessoryType = .DisclosureIndicator
             cell.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4)
             
-            cell.textLabel?.text = "Favorite Artist"
             var followingSwitch = UISwitch()
+            followingSwitch.addTarget(self, action: Selector("favoriteSwitchAction:"), forControlEvents: .ValueChanged)
             cell.accessoryView = followingSwitch
             
+            if let artist = self.object {
+                let artistId: Int = Int(artist.objectForKey(kTTArtistIDKey) as NSNumber)
+                let favorites = PFUser.currentUser().objectForKey(kTTUserFavoriteArtistIdsKey) as? Array<String>
+//                println("user: \(PFUser.currentUser()) raw: \(PFUser.currentUser().objectForKey(kTTUserFavoriteArtistIdsKey) ) favorites: \(favorites) id: \(artistId)")
+
+                if let acutalFavorites = favorites {
+//                    println("favorites: \(acutalFavorites) id: \(artistId)")
+                    
+                    // artist IDs are Int in Artist, but are String in Event
+                    followingSwitch.on = contains(acutalFavorites, String(artistId))
+                }
+            }
+
             return cell
         } else {
             var cell:TTArtistEventTableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? TTArtistEventTableViewCell
@@ -130,7 +167,7 @@ class TTArtistViewController: TTEventsTableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
         if indexPath.section==0 {
-            println("hee")
+
         } else {
             var object = self.objectAtIndexPath(indexPath)
             if let event = object {

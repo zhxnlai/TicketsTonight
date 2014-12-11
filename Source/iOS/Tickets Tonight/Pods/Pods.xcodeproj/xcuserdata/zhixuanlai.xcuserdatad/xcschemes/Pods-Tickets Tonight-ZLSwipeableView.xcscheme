@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9EC050950B3C28DF354F7832"
+               BlueprintIdentifier = "D21D0CE35C6FDF64056799A7"
                BuildableName = "libPods-Tickets Tonight-ZLSwipeableView.a"
                BlueprintName = "Pods-Tickets Tonight-ZLSwipeableView"
                ReferencedContainer = "container:Pods.xcodeproj">

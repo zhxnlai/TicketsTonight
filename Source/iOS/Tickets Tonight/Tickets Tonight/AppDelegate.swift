@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var navController: UINavigationController!
     var tabBarController: UITabBarController!
     var feedViewController: TTFeedTableViewController!
+    var favoriteFeedViewController: TTFavoriteFeedTableViewController!
+    var followingFeedViewController: TTFollowingFeedTableViewController!
+
     var favoriteViewController: TTFavoriteTableViewController!
     var exploreViewController: TTExploreViewController!
     var settingsViewController: TTSettingsTableViewController!
@@ -25,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.tabBarController = UITabBarController()
         
         self.feedViewController = TTFeedTableViewController(style: .Plain)
+        self.favoriteFeedViewController = TTFavoriteFeedTableViewController(style: .Plain)
+        self.followingFeedViewController = TTFollowingFeedTableViewController(style: .Plain)
+        
         self.favoriteViewController = TTFavoriteTableViewController(style: .Plain)
         self.exploreViewController = TTExploreViewController()
         self.settingsViewController = TTSettingsTableViewController(style: .Grouped)
@@ -39,11 +45,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.exploreViewController.navigationItem.title = "Explore"
         self.settingsViewController.navigationItem.title = "More"
         
-        var feedNav = UINavigationController(rootViewController: feedViewController)
+//        var feedNav = UINavigationController(rootViewController: feedViewController)
+    
+        var feedNav = RKSwipeBetweenViewControllers(rootViewController: UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil))
+        feedNav.viewControllerArray = [self.feedViewController, self.favoriteFeedViewController, self.followingFeedViewController]
+        feedNav.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(named: "IconInbox"), selectedImage: UIImage(named: "IconInboxSelected"))
+
         var favoriteNav = UINavigationController(rootViewController: favoriteViewController)
         var exploreNav = UINavigationController(rootViewController: exploreViewController)
         var settingsNav = UINavigationController(rootViewController: settingsViewController)
         
+
         self.tabBarController.viewControllers = [feedNav, favoriteNav, exploreNav, settingsNav]
         
         self.navController.navigationBarHidden = true
@@ -69,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFUser.currentUser().incrementKey(kTTUserRunCountKey)
         PFUser.currentUser().saveInBackgroundWithBlock { (succeeded, error) -> Void in
             if succeeded {
-                
+                PFUser.currentUser().fetch()
             }
         }
         window = UIWindow(frame: UIScreen.mainScreen().bounds)

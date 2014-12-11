@@ -69,6 +69,8 @@ class TTImageTableViewCell: PFTableViewCell {
         didSet {
             if let url = imageURL {
                 self.imageView!.sd_setImageWithURL(NSURL(string: url), placeholderImage: SVGKImage(named: "PlaceholderImageSVG").UIImage)
+                self.setNeedsLayout()
+                self.layoutIfNeeded()
             }
         }
     }

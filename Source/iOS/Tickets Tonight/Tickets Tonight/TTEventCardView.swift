@@ -26,6 +26,12 @@ class TTEventCardView: TTCardView {
 
     var containerView: UIView!
     
+    var similarArtistName: String? {
+        didSet {
+            similarArtistLabel.text = "Similar to \(similarArtistName!)"
+        }
+    }
+    
     var object:PFObject? {
         didSet {
             if let event = object {

@@ -12,11 +12,15 @@ class TTCategoryViewController: PFQueryTableViewController {
     
     var parentId: Int?;
     
-    override init!(style: UITableViewStyle, className: String!) {
-        super.init(style: style, className: className)
+    init() {
+        super.init(style: .Plain, className: kTTCategoryKey)
         title = "Category"
         pullToRefreshEnabled = true
         paginationEnabled = false
+
+    }
+    override init!(style: UITableViewStyle, className: String!) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 
@@ -62,7 +66,7 @@ class TTCategoryViewController: PFQueryTableViewController {
 
         } else {
             // level 1 since category only has two levels
-            var categoryViewController = TTCategoryViewController(style: .Plain, className: kTTCategoryKey);
+            var categoryViewController = TTCategoryViewController();
             categoryViewController.parentId = object[kTTCategoryIDKey] as? Int
             navigationController!.pushViewController(categoryViewController, animated: true);
         }

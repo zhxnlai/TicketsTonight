@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E93E140F606928F94F3B0901"
+               BlueprintIdentifier = "4357036225FD9AA04867CEB2"
                BuildableName = "libPods-Tickets Tonight-FXBlurView.a"
                BlueprintName = "Pods-Tickets Tonight-FXBlurView"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -11,7 +11,8 @@ import MapKit
 
 class TTEventViewController: UITableViewController {
     
-    var backgroundImageView:UIImageView!
+    var headerView:UIImageView = UIImageView()
+    var backgroundImageView:UIImageView = UIImageView()
     
     var mapView:MKMapView!
     let mapViewHeight = CGFloat(250)
@@ -23,24 +24,17 @@ class TTEventViewController: UITableViewController {
                 
                 title = event[kTTEventNameKey] as? String
                 
-                let width = self.view.frame.size.width
-                var headerView = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: width*2/3.0))
-                headerView.contentMode = .ScaleAspectFill
-                headerView.clipsToBounds = true
-                
-                
                 let artistId = event[kTTEventPrimaryArtistKey] as String
                 findArtistById(artistId.toInt()!, { (object, error) -> () in
                     if let artist = object {
                         let venueImgUrl = artist[kTTArtistImageURLKey] as String
-                        headerView.sd_setImageWithURL(NSURL(string: venueImgUrl), placeholderImage: placeholderImg)
+                        self.headerView.sd_setImageWithURL(NSURL(string: venueImgUrl), placeholderImage: placeholderImg)
                         self.backgroundImageView.sd_setImageWithURL(NSURL(string: venueImgUrl), placeholderImage: placeholderImg, completed: { (image, error, cacheType, url) -> Void in
                             self.backgroundImageView.image = image.blurredImageWithRadius(80, iterations: 2, tintColor: UIColor.blackColor())
                         })
                     }
                 })
 
-                tableView.tableHeaderView = headerView
                 tableView.reloadData()
 
             }
@@ -67,19 +61,34 @@ class TTEventViewController: UITableViewController {
         tableView.separatorStyle = .None;
         super.viewDidLoad()
         
-        backgroundImageView = UIImageView(frame: view.bounds)
-//        backgroundBlurView = FXBlurView(frame: view.bounds)
-//        backgroundBlurView.tintColor = UIColor.blackColor()
-//        backgroundBlurView.blurRadius = 80
-//        backgroundBlurView.dynamic = false
-//        backgroundImageView.addSubview(backgroundBlurView)
+        backgroundImageView.frame = view.bounds
         tableView.backgroundView = backgroundImageView
         
+        let width = self.view.frame.size.width
+        headerView.contentMode = .ScaleAspectFill
+        headerView.clipsToBounds = true
+        self.tableView.setParallaxHeaderView(headerView, mode: .Fill, height: width*2/3.0)
+    }
+    
+    
+    // MARK: - Action
+    func favoriteSwitchAction(aSwitch: UISwitch) {
+        if let event = object {
+            if (aSwitch.on && PFUser.currentUser() != nil) {
+                PFUser.currentUser().addUniqueObject(event, forKey: kTTUserFollowingEventsKey)
+                PFUser.currentUser().addUniqueObject(event.objectId, forKey: kTTUserFollowingEventIdsKey)
+                PFUser.currentUser().saveEventually()
+            } else {
+                PFUser.currentUser().removeObject(event, forKey: kTTUserFollowingEventsKey)
+                PFUser.currentUser().removeObject(event.objectId, forKey: kTTUserFollowingEventIdsKey)
+                PFUser.currentUser().saveEventually()
+            }
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - scrollview delegate
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.tableView.shouldPositionParallaxHeader()
     }
     
     // MARK: Cells
@@ -87,7 +96,7 @@ class TTEventViewController: UITableViewController {
         case Follow, Artists, Tickets, Location, Count
         
         enum FollowRow: Int {
-            case Follow, Count
+            case Date, Follow, Count
         }
         
         enum ArtistsRow: Int {
@@ -171,11 +180,32 @@ class TTEventViewController: UITableViewController {
         cell.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4)
         switch TTEventTableViewControllerSection(rawValue:indexPath.section)! {
         case .Follow:
+            cell.selectionStyle = .None
             switch TTEventTableViewControllerSection.FollowRow(rawValue: indexPath.row)! {
+            case .Date:
+                cell.accessoryType = .None
+                cell.textLabel!.text = "Date"
+                if let event = self.object {
+                    let eventDate = event[kTTEventDateObjectKey] as NSDate
+                    cell.detailTextLabel!.text = NSDateFormatter.localizedStringFromDate(eventDate, dateStyle: .FullStyle, timeStyle: .NoStyle)
+                }
+
             case .Follow:
                 cell.textLabel!.text = "Follow Event"
+                
                 var followingSwitch = UISwitch()
+                followingSwitch.addTarget(self, action: Selector("favoriteSwitchAction:"), forControlEvents: .ValueChanged)
                 cell.accessoryView = followingSwitch
+                
+                if let event = self.object {
+                    let eventId = event.objectId
+                    let following = PFUser.currentUser().objectForKey(kTTUserFollowingEventIdsKey) as? Array<String>
+                    
+                    if let acutalFavorites = following {
+                        followingSwitch.on = contains(acutalFavorites, eventId)
+                    }
+                }
+
             default:
                 cell.textLabel!.text = "Follow"
             }

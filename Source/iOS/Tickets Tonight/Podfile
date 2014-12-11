@@ -12,12 +12,16 @@ target 'Tickets Tonight' do
     #    pod 'TheAmazingAudioEngine'
     pod 'FormatterKit'
     pod 'UIColor+FlatColors'
-    pod 'CRToast'
-    pod 'CocoaLumberjack', '~> 1.9'
+#    pod 'CRToast'
+#    pod 'CocoaLumberjack', '~> 1.9'
     pod 'SVGKit'
     
     pod 'SVWebViewController'
     pod 'FXBlurView'
+#    pod 'TLYShyNavBar'
+    pod 'VGParallaxHeader'
+    pod 'RKSwipeBetweenViewControllers'
+
 end
 
 target 'Tickets TonightTests' do

@@ -1,5 +1,6 @@
 //
-//  Use this file to import your target's public headers that you would like to expose to Swift.
+//  Use this file to import your target's public headers that you would like to
+//  expose to Swift.
 //
 
 #import "ZLSwipeableView.h"
@@ -8,7 +9,7 @@
 #import "ParseUI.h"
 
 #import "Reachability.h"
-#import "CRToast.h"
+//#import "CRToast.h"
 #import "UIColor+FlatColors.h"
 
 #import "TTTTimeIntervalFormatter.h"
@@ -20,3 +21,8 @@
 #import "SVWebViewController.h"
 
 #import "FXBlurView.h"
+
+#import "UIScrollView+VGParallaxHeader.h"
+//#import "TLYShyNavBarManager.h"
+
+#import <RKSwipeBetweenViewControllers/RKSwipeBetweenViewControllers.h>

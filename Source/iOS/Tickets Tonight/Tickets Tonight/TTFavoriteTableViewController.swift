@@ -18,8 +18,8 @@ class TTFavoriteTableViewController: TTArtistsTableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("addButtonAction:"))
+//        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Search, target: self, action: Selector("searchButtonAction:"))
 
     }
 
@@ -29,9 +29,9 @@ class TTFavoriteTableViewController: TTArtistsTableViewController {
     }
     
     // MARK: - Action
-    func addButtonAction(barButtonItem: UIBarButtonItem) {
-        var categoryViewController = TTCategoryViewController(style: .Plain, className: kTTCategoryKey);
-        navigationController!.pushViewController(categoryViewController, animated: true);
+    func searchButtonAction(barButtonItem: UIBarButtonItem) {
+        var searchVC = TTSearchArtistsTableViewController(style: .Plain)
+        navigationController?.pushViewController(searchVC, animated: true);
     }
     
     override func tableView(tableView: UITableView!, cellForNextPageAtIndexPath indexPath: NSIndexPath!) -> PFTableViewCell! {
@@ -50,11 +50,22 @@ class TTFavoriteTableViewController: TTArtistsTableViewController {
             return query;
         }
         
-        
-//        query.whereKey(ktt, equalTo: categoryId)
-        query.orderByAscending(kTTArtistNameKey)
-        query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+        let following = PFUser.currentUser().objectForKey(kTTUserFavoriteArtistsKey) as? Array<PFObject>
+        if let actualFollowing = following {
+            var objectIds = actualFollowing.reduce(Array<String>(), combine: { (acc, object) -> Array<String> in
+                var array = acc
+                array.append(object.objectId)
+                return array
+            })
+            query.whereKey("objectId", containedIn: objectIds)
+            query.orderByDescending(kTTArtistNameKey)
+            query.cachePolicy = kPFCachePolicyCacheElseNetwork;
+        } else {
+            query.limit = 0;
+            query.whereKey("objectId", containedIn: [])
 
+            return query;
+        }
         
         return query
     }

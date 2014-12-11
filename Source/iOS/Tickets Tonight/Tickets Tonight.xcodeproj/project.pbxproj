@@ -31,6 +31,7 @@
 		09910E3A1A354E0300D8DE30 /* TTCategoryArtistsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09910E391A354E0300D8DE30 /* TTCategoryArtistsTableViewController.swift */; };
 		09910E3C1A36271800D8DE30 /* TTEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09910E3B1A36271800D8DE30 /* TTEventsTableViewController.swift */; };
 		09926B301A365CD700068661 /* TTUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09926B2F1A365CD700068661 /* TTUtils.swift */; };
+		09AE6D6B1A39138B005426E1 /* TTSearchArtistsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AE6D6A1A39138B005426E1 /* TTSearchArtistsTableViewController.swift */; };
 		09B5F71B1A1535C100232545 /* TTExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5F71A1A1535C100232545 /* TTExploreViewController.swift */; };
 		09B5F71D1A1535E000232545 /* TTArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5F71C1A1535E000232545 /* TTArtistViewController.swift */; };
 		09BC3C101A1539DA005B85B4 /* TTFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BC3C0F1A1539DA005B85B4 /* TTFeedTableViewController.swift */; };
@@ -57,6 +58,8 @@
 		09DF42EF1A152DAC0051B91E /* TTEventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF42EE1A152DAC0051B91E /* TTEventCardView.swift */; };
 		09DF42F71A15307B0051B91E /* TTSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF42F61A15307B0051B91E /* TTSettingsTableViewController.swift */; };
 		09E3EC051A1AF881000022FB /* TTConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E3EC041A1AF881000022FB /* TTConstants.swift */; };
+		09EC14311A3956A300263E58 /* TTFollowingFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EC14301A3956A300263E58 /* TTFollowingFeedTableViewController.swift */; };
+		09EC14351A3956E700263E58 /* TTFavoriteFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EC14341A3956E700263E58 /* TTFavoriteFeedTableViewController.swift */; };
 		C5EAB7DD130279B71BCC16BA /* libPods-Tickets Tonight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D73921CB4A00A016F8EB164 /* libPods-Tickets Tonight.a */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +99,7 @@
 		09910E391A354E0300D8DE30 /* TTCategoryArtistsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCategoryArtistsTableViewController.swift; sourceTree = "<group>"; };
 		09910E3B1A36271800D8DE30 /* TTEventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEventsTableViewController.swift; sourceTree = "<group>"; };
 		09926B2F1A365CD700068661 /* TTUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTUtils.swift; sourceTree = "<group>"; };
+		09AE6D6A1A39138B005426E1 /* TTSearchArtistsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTSearchArtistsTableViewController.swift; sourceTree = "<group>"; };
 		09B5F71A1A1535C100232545 /* TTExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTExploreViewController.swift; sourceTree = "<group>"; };
 		09B5F71C1A1535E000232545 /* TTArtistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTArtistViewController.swift; sourceTree = "<group>"; };
 		09BC3C0F1A1539DA005B85B4 /* TTFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTFeedTableViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 		09E3EBFF1A1AB854000022FB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		09E3EC011A1AB859000022FB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		09E3EC041A1AF881000022FB /* TTConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTConstants.swift; sourceTree = "<group>"; };
+		09EC14301A3956A300263E58 /* TTFollowingFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTFollowingFeedTableViewController.swift; sourceTree = "<group>"; };
+		09EC14341A3956E700263E58 /* TTFavoriteFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTFavoriteFeedTableViewController.swift; sourceTree = "<group>"; };
 		4D73921CB4A00A016F8EB164 /* libPods-Tickets Tonight.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tickets Tonight.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C5A482F44CD95A4E01741A /* Pods-Tickets Tonight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tickets Tonight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tickets Tonight/Pods-Tickets Tonight.debug.xcconfig"; sourceTree = "<group>"; };
 		D808B348325AC46A7B1E2EBF /* Pods-Tickets Tonight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tickets Tonight.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tickets Tonight/Pods-Tickets Tonight.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,12 +234,12 @@
 		09910E2C1A350E2B00D8DE30 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				09BC3C0F1A1539DA005B85B4 /* TTFeedTableViewController.swift */,
+				09EC14331A3956B700263E58 /* Feed */,
 				09910E2D1A350E6100D8DE30 /* TTFavoriteTableViewController.swift */,
-				09910E351A353E1B00D8DE30 /* TTCategoryViewController.swift */,
-				09910E391A354E0300D8DE30 /* TTCategoryArtistsTableViewController.swift */,
+				09AE6D6A1A39138B005426E1 /* TTSearchArtistsTableViewController.swift */,
 				09B5F71A1A1535C100232545 /* TTExploreViewController.swift */,
 				09DF42F61A15307B0051B91E /* TTSettingsTableViewController.swift */,
+				09EC14321A3956A700263E58 /* category */,
 			);
 			name = TabBar;
 			sourceTree = "<group>";
@@ -309,6 +315,25 @@
 				09910E2A1A350DF600D8DE30 /* TabelViewCells */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		09EC14321A3956A700263E58 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				09910E351A353E1B00D8DE30 /* TTCategoryViewController.swift */,
+				09910E391A354E0300D8DE30 /* TTCategoryArtistsTableViewController.swift */,
+			);
+			name = category;
+			sourceTree = "<group>";
+		};
+		09EC14331A3956B700263E58 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				09BC3C0F1A1539DA005B85B4 /* TTFeedTableViewController.swift */,
+				09EC14341A3956E700263E58 /* TTFavoriteFeedTableViewController.swift */,
+				09EC14301A3956A300263E58 /* TTFollowingFeedTableViewController.swift */,
+			);
+			name = Feed;
 			sourceTree = "<group>";
 		};
 		09F8AD701A37BCF100BB1BF2 /* ImageTVCells */ = {
@@ -502,9 +527,12 @@
 				09910E301A35100300D8DE30 /* TTImageTableViewCell.swift in Sources */,
 				09BC3C331A156B22005B85B4 /* TTEventTableViewCell.swift in Sources */,
 				09910E3C1A36271800D8DE30 /* TTEventsTableViewController.swift in Sources */,
+				09EC14351A3956E700263E58 /* TTFavoriteFeedTableViewController.swift in Sources */,
 				09BC3C2B1A15493F005B85B4 /* TTCardView.swift in Sources */,
 				09910E271A350D5F00D8DE30 /* TTEventViewController.swift in Sources */,
 				09910E2E1A350E6100D8DE30 /* TTFavoriteTableViewController.swift in Sources */,
+				09AE6D6B1A39138B005426E1 /* TTSearchArtistsTableViewController.swift in Sources */,
+				09EC14311A3956A300263E58 /* TTFollowingFeedTableViewController.swift in Sources */,
 				09910E191A34D79600D8DE30 /* Compound.swift in Sources */,
 				09BC3C101A1539DA005B85B4 /* TTFeedTableViewController.swift in Sources */,
 				09B5F71B1A1535C100232545 /* TTExploreViewController.swift in Sources */,
@@ -652,13 +680,14 @@
 			baseConfigurationReference = D5C5A482F44CD95A4E01741A /* Pods-Tickets Tonight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Tickets Tonight/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tickets Tonight/Tickets Tonight-Bridging-Header.h";
@@ -671,13 +700,14 @@
 			baseConfigurationReference = D808B348325AC46A7B1E2EBF /* Pods-Tickets Tonight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Tickets Tonight/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tickets Tonight/Tickets Tonight-Bridging-Header.h";

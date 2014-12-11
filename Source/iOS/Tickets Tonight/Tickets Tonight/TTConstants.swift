@@ -16,6 +16,21 @@ let kTTSecondaryTextColor = UIColor(red: 0.529, green: 0.553, blue: 0.588, alpha
 
 // MARK: - Parse
 let kTTUserRunCountKey = "RunCount"
+let kTTUserFavoriteArtistsKey = "FavoriteArtists"
+let kTTUserFavoriteArtistIdsKey = "FavoriteArtistIds"
+let kTTUserFollowingEventsKey = "FollowingEvents"
+let kTTUserFollowingEventIdsKey = "FollowingEventIds"
+
+
+// MARK: - Affinity
+let kTTAffinityKey = "aff"
+let kTTAffinityArtistNameKey = "ArtistName"
+let kTTAffinityRecArtistsKey = "RecArtists"
+
+let kTTAffinityRecArtistIDKey = "RecId"
+let kTTAffinityRecArtistNameKey = "RecName"
+let kTTAffinityRecArtistScoreKey = "RecVal"
+
 
 let kTTFeedObjectIDKey = "ID"
 

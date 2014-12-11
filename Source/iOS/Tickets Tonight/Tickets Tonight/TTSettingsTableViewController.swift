@@ -28,7 +28,7 @@ class TTSettingsTableViewController: UITableViewController {
         }
         
         static let sectionTitles = [
-            Account: "Account", Location: "Location", Logout: "Logout"]
+            Account: "", Location: "Privacy", Logout: ""]
         
         static let sectionCount = [Account: AccountRow.Count.rawValue, Location: LocationRow.Count.rawValue, Logout: LogoutRow.Count.rawValue, ];
         
@@ -68,7 +68,7 @@ class TTSettingsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cellIdentifier = String(format: "s%li-r%li", indexPath.section, indexPath.row)
-        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? UITableViewCell
+        var cell:UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? UITableViewCell
         if cell==nil {
             cell = UITableViewCell(style: .Value1, reuseIdentifier: cellIdentifier)
         }
@@ -77,30 +77,70 @@ class TTSettingsTableViewController: UITableViewController {
         case .Account:
             switch TTSettingsTableViewControllerSection.AccountRow(rawValue: indexPath.row)! {
             case .Username:
-                cell!.textLabel!.text = "Username"
+                cell.accessoryType = .DisclosureIndicator
+                cell.textLabel!.text = "Artist Category"
             default:
-                cell!.textLabel!.text = "Account"
+                cell.textLabel!.text = "Account"
             }
         case .Location:
             switch TTSettingsTableViewControllerSection.LocationRow(rawValue: indexPath.row)! {
             case .Location:
-                cell!.textLabel!.text = "Location"
+                cell.textLabel!.text = "Use My Location"
+                var followingSwitch = UISwitch()
+                cell.accessoryView = followingSwitch
+                
             default:
-                cell!.textLabel!.text = "Location"
+                cell.textLabel!.text = "Location"
             }
         case .Logout:
             switch TTSettingsTableViewControllerSection.LogoutRow(rawValue: indexPath.row)! {
             case .Logout:
-                cell!.textLabel!.text = "Logout"
+                cell.textLabel!.text = "Logout"
             default:
-                cell!.textLabel!.text = "Logout"
+                cell.textLabel!.text = "Logout"
             }
         default:
-            cell!.textLabel!.text = "N/A"
+            cell.textLabel!.text = "N/A"
         }
 
         
-        return cell!
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        switch TTSettingsTableViewControllerSection(rawValue:indexPath.section)! {
+        case .Account:
+            switch TTSettingsTableViewControllerSection.AccountRow(rawValue: indexPath.row)! {
+            case .Username:
+                var categoryVC = TTCategoryViewController()
+                navigationController?.pushViewController(categoryVC, animated: true);
+
+                return
+            default:
+                return
+            }
+        case .Location:
+            switch TTSettingsTableViewControllerSection.LocationRow(rawValue: indexPath.row)! {
+            case .Location:
+                return
+            default:
+                return
+            }
+        case .Logout:
+            switch TTSettingsTableViewControllerSection.LogoutRow(rawValue: indexPath.row)! {
+            case .Logout:
+                return
+            default:
+                return
+            }
+        default:
+            return
+        }
+        
+
     }
 
 }

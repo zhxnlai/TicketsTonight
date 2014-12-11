@@ -11,7 +11,8 @@ import UIKit
 let cellIdentifier = "cell"
 class TTFeedTableViewController: TTEventsTableViewController {
     
-
+    // TODO: my favorite, nearme, tracking
+    
     var sectionSortedKeys: Array<NSDate> = Array<NSDate>()
     var sections: Dictionary<NSDate, Array<PFObject>> = Dictionary<NSDate, Array<PFObject>>()
     override init(style: UITableViewStyle) {
@@ -30,11 +31,17 @@ class TTFeedTableViewController: TTEventsTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = kTTBackgroundColor
+        
+        
     }
 
     // MARK: - data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return sections.count+1
+        var count = sections.count
+        if paginationEnabled {
+            count += 1
+        }
+        return count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

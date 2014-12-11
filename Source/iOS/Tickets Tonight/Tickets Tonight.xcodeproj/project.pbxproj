@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0972A4C11A398FAF0015E261 /* TTLocationFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0972A4C01A398FAF0015E261 /* TTLocationFeedTableViewController.swift */; };
 		09910E181A34D79600D8DE30 /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09910E0A1A34D79600D8DE30 /* Coefficients.swift */; };
 		09910E191A34D79600D8DE30 /* Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09910E0B1A34D79600D8DE30 /* Compound.swift */; };
 		09910E1A1A34D79600D8DE30 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09910E0C1A34D79600D8DE30 /* Dimension.swift */; };
@@ -74,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0972A4C01A398FAF0015E261 /* TTLocationFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTLocationFeedTableViewController.swift; sourceTree = "<group>"; };
 		09910E091A34D79600D8DE30 /* Cartography.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cartography.h; sourceTree = "<group>"; };
 		09910E0A1A34D79600D8DE30 /* Coefficients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coefficients.swift; sourceTree = "<group>"; };
 		09910E0B1A34D79600D8DE30 /* Compound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compound.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				09BC3C0F1A1539DA005B85B4 /* TTFeedTableViewController.swift */,
+				0972A4C01A398FAF0015E261 /* TTLocationFeedTableViewController.swift */,
 				09EC14341A3956E700263E58 /* TTFavoriteFeedTableViewController.swift */,
 				09EC14301A3956A300263E58 /* TTFollowingFeedTableViewController.swift */,
 			);
@@ -540,6 +543,7 @@
 				09910E361A353E1B00D8DE30 /* TTCategoryViewController.swift in Sources */,
 				09910E321A35102500D8DE30 /* TTArtistTableViewCell.swift in Sources */,
 				09926B301A365CD700068661 /* TTUtils.swift in Sources */,
+				0972A4C11A398FAF0015E261 /* TTLocationFeedTableViewController.swift in Sources */,
 				09910E3A1A354E0300D8DE30 /* TTCategoryArtistsTableViewController.swift in Sources */,
 				09DC6BA11A385AFF00ED25A3 /* TTArtistEventTableViewCell.swift in Sources */,
 				09910E1F1A34D79600D8DE30 /* Layout.swift in Sources */,

@@ -15,7 +15,7 @@ class TTSettingsTableViewController: UITableViewController {
         case Account, Location, Logout, Count
         
         enum AccountRow: Int {
-            case Username, Count
+            case Username, NearBy, Count
         }
         
         
@@ -79,6 +79,9 @@ class TTSettingsTableViewController: UITableViewController {
             case .Username:
                 cell.accessoryType = .DisclosureIndicator
                 cell.textLabel!.text = "Artist Category"
+            case .NearBy:
+                cell.accessoryType = .DisclosureIndicator
+                cell.textLabel!.text = "Events Near Me"
             default:
                 cell.textLabel!.text = "Account"
             }
@@ -119,6 +122,10 @@ class TTSettingsTableViewController: UITableViewController {
                 navigationController?.pushViewController(categoryVC, animated: true);
 
                 return
+            case .NearBy:
+                var locationFeedTVC = TTLocationFeedTableViewController(style: .Plain)
+                navigationController?.pushViewController(locationFeedTVC, animated: true);
+
             default:
                 return
             }

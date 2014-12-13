@@ -50,7 +50,9 @@ class TTExploreViewController: UIViewController, ZLSwipeableViewDelegate, ZLSwip
     
     // MARK: - Action
     func refreshButtonAction(barButtonItem: UIBarButtonItem!) {
-        // artists -> names[] -> recArtists -> rectArtistsId: Array<Int> -> to string -> eventWhere(PrimaryArtist In ArtistsIdStringArray) -> exclude followed
+        /* artistObjects -> artistNames[] ->
+        recArtists{Id:Int, name:String, Score:Float} -> rectArtistsId: Array<Int> -> recArtistsIdString: Array<String> ->
+        query: eventWhere(ArtistIds In recArtistsIdStringArray) -> exclude followed events*/
         
         let following = PFUser.currentUser().objectForKey(kTTUserFavoriteArtistsKey) as? Array<PFObject>
         if let actualFollowing = following {
@@ -59,7 +61,6 @@ class TTExploreViewController: UIViewController, ZLSwipeableViewDelegate, ZLSwip
             })
             var artistQuery = PFQuery(className: kTTArtistKey)
             artistQuery.whereKey("objectId", containedIn: objectIds)
-            //            artistQuery.orderByDescending(kTTArtistNameKey)
             artistQuery.cachePolicy = kPFCachePolicyCacheElseNetwork;
             
             artistQuery.findObjectsInBackgroundWithBlock { (results, error) -> Void in
@@ -68,29 +69,22 @@ class TTExploreViewController: UIViewController, ZLSwipeableViewDelegate, ZLSwip
                         var names = artists.reduce(Array<String>(), combine: { (acc, object) -> Array<String> in
                             var array = acc; array.append(object[kTTArtistNameKey] as String); return array
                         })
-//                        println("favorite artists names: \(names)")
                         
                         var affinityQuery = PFQuery(className: kTTAffinityKey)
                         affinityQuery.whereKey(kTTAffinityArtistNameKey, containedIn: names)
                         affinityQuery.cachePolicy = kPFCachePolicyCacheElseNetwork;
                         affinityQuery.findObjectsInBackgroundWithBlock({ (results, error) -> Void in
                             if error == nil {
-//                                println("affinityQuery results: \(results)")
-                                
                                 if let affs = results as? Array<PFObject> {
                                     self.affs = affs
                                     self.affinityMap = Dictionary<String, Array<String>>()
                                     
                                     var recArtistIds = affs.reduce(Array<String>(), combine: { (acc, object:PFObject) -> Array<String> in
                                         var array = acc;
-//                                        println("1")
                                         if var recs = object[kTTAffinityRecArtistsKey] as? Array<NSDictionary> {
-//                                            println("2: \(recs)")
                                             var subRecArtistIds = recs.reduce(Array<String>(), combine: { (acc, object:NSDictionary) -> Array<String> in
-//                                                println("3 \(object)")
                                                 var array = acc;
                                                 if let idInt = object.objectForKey(kTTAffinityRecArtistIDKey) as? Int {
-//                                                    println("4 \(idInt)")
                                                     array.append(String(idInt));
                                                 }
                                                 return array
@@ -103,7 +97,6 @@ class TTExploreViewController: UIViewController, ZLSwipeableViewDelegate, ZLSwip
                                     })
                                     
                                     println("map: \(self.affinityMap)")
-
                                     println("rec artists ids: \(recArtistIds)")
                                     
                                     var eventQuery = PFQuery(className: kTTEventKey)
@@ -141,19 +134,16 @@ class TTExploreViewController: UIViewController, ZLSwipeableViewDelegate, ZLSwip
         navigationController?.pushViewController(searchVC, animated: true);
     }
     
-    
     func eventCardDidTap(card: TTEventCardView) {
         if let event = card.object {
             var eventViewController = TTEventViewController();
             eventViewController.object = event
             navigationController!.pushViewController(eventViewController, animated: true);
-            
         }
     }
         
     // MARK: - ZLSwipeableViewDataSource
     func nextViewForSwipeableView(swipeableView: ZLSwipeableView!) -> UIView! {
-
         if let events = objects {
             self.objectIndex = self.objectIndex%events.count
             

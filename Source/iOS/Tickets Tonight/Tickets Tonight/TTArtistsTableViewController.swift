@@ -47,7 +47,7 @@ class TTArtistsTableViewController: PFQueryTableViewController {
         
         if indexPath.row >= objects.count {return}
         
-        var artistViewController = TTArtistViewController(style: .Plain);
+        var artistViewController = TTArtistViewController(style: .Grouped);
         var artist = objects[indexPath.row] as PFObject
         artistViewController.object = artist
         navigationController!.pushViewController(artistViewController, animated: true);

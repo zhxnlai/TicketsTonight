@@ -8,7 +8,7 @@
 		the cell, then the event information view is displayed in an event view page which displays the image of 
 		the event at the top followed by the date of the event, follow toggle for the event (places the event under 
 		the following tab in Feed view), the ticket price range, and the location of the event. If the data provides 
-		the ticket url, then by clicking on the ticket price cell, the app will start an in-app embedded browser 
+		the ticket URL, then by clicking on the ticket price cell, the app will start an in-app embedded browser 
 		that allows the user to buy the ticket on Ticketmaster’s website. The location of the event is followed by 
 		a cell of Apple Maps that pins the event on the map. In the artist view page the user can favorite or 
 		unfavorite the artist. The artist page displays the artist name on top followed by his or her picture and 
@@ -113,12 +113,12 @@
 	    tables views with Image table view cells which contain an image and text to the right of the image. In the Feed table view controller, we 
 	    populate the view with Event cells which contain the image of the event and the title of the event. In Favorite table view controller we 
 	    populate the view with artist cells which contain the image of the artist and the name of the artist. The event cells and artist cells lead to 
-	    event views and artist views respectively. In the event views we display the image, artist, ticket url and the location of the event. In the 
+	    event views and artist views respectively. In the event views we display the image, artist, ticket URL and the location of the event. In the 
 	    artist views we display the image of the artist and events the artist has. In order to populate the cells with actual data, we query the data 
 	    on Parse through the aforementioned Parse interface. By querying Parse with the \textit{PFQuery} object we can obtain the data we need in order 
 	    to populate the cells. For detailed description of the object methods, the documentation for view controller objects for iOS is included in 
 	    the reference section. In order to display the map in the events page, we convert the address to a geopoint using the \textit{CLGeocoder} object 
-	    and using it we could mark the venue on to the map. In order to open the url inside the app, we create a webview to display it. In 
+	    and using it we could mark the venue on to the map. In order to open the URL inside the app, we create a webview to display it. In 
 	    addition, when we query the data needed for the explore view, we first obtain the favorite artists objects then flatten them to names in 
 	    order to query the affinity data, then acquire recommended artists objects, then flatten those objects into int ID’s, convert those ID’s into 
 	    strings, then query the events and finally exclude the events that the user are already following. 

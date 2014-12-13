@@ -98,9 +98,9 @@
 		     Ticketmaster did not provide us with an API to access their data, but instead provided us with two 
 		     static data files: 1) an event info data feed formatted as an XML file and 2) an affinity feed formatted 
 		     as a simple text file. Our implementation parses these data files and hosts them as Parse objects 
-		     (PFObject), essentially a database  (key-value pairs of JSON-compatible data), on Parse. Tickets 
+		     (\textit{PFObject}), essentially a database  (key-value pairs of JSON-compatible data), on Parse. Tickets 
 		     Tonight will connect to Parse through the iOS SDK which provides access to objects on Parse through 
-		     a query object (PFQuery).
+		     a query object (\textit{PFQuery}).
 		     
 		       \paragraph{Event Info Data Feed}
 		       Ticketmaster provided us with a 118.9MB XML file that includes a list of artists, event venues, event 
@@ -113,16 +113,16 @@
 		       		\captionof{figure}{XML data schema}
 		       	\end{center}
 		       	For each artist, Ticketmaster has provided us the artist id, the category to which this artists 
-		       	belongs, an url to the artist’s image (low resolution), the artist name, and an url to the artist page 
-		       	on ticketmaster’s website.
+		       	belongs, an URL to the artist’s image (low resolution), the artist name, and an URL to the artist page 
+		       	on Ticketmaster’s website.
 		       	
 		       	For each venue, Ticketmaster has provided us the city of the venue, the state of the venue, the 
-		       	street of the venue, an url to the venue’s image, the name of the venue, an url to the venue’s page 
-		       	on ticketmaster’s website and the zip code of the venue.
+		       	street of the venue, an URL to the venue’s image, the name of the venue, an URL to the venue’s page 
+		       	on Ticketmaster’s website and the zip code of the venue.
 		       	
 		       	For each event, Ticketmaster has provided us the event id, the performer ids (artist ids), the 
 		       	category id of the event, the event date, event status, event time, on sale date, performance name, 
-		       	the url to the ticketmaster page, and the venue id.
+		       	the URL to the Ticketmaster page, and the venue id.
 		       	
 		       	\paragraph{Affinity Data Feed}
 		       	The affinity data provided by Ticketmaster is a 11.1MB text file. The file contains an entry for 

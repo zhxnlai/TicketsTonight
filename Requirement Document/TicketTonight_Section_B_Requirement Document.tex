@@ -6,18 +6,28 @@
 % add jump
 \usepackage{color}
 \usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
 \hypersetup{
 	colorlinks = true, 
 	citecolor=black,
 	filecolor=black,
 	linkcolor=black,
-	urlcolor=black
+	urlcolor=cyan
 }
+
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 
 \newcommand*{\titleTH}{\begingroup % Create the command for including the title page in the document
@@ -29,16 +39,17 @@
 		\vspace*{1\baselineskip}
 		{\Huge \bfseries Tickets Tonight App} \\
 	    \vspace*{3\baselineskip}  % Whitespace for seperation
-	    {\LARGE Team members:} \\
+		{\LARGE \textbf{Client}}  \\
+	    \vspace*{1\baselineskip}  
+	    {\LARGE Ticketmaster Entertainment, Inc} \\
+	    \vspace*{3\baselineskip}
+	    {\LARGE \textbf{Team members}} \\
 	    \vspace*{1.5\baselineskip}  
 	    {\LARGE  Matt Agra, Weijian Lin, Runhang Li, } \\
-	    \vspace*{1\baselineskip}
-	    {\LARGE Zhetian Sun, Zhixuan Lai, Jeffery Ouyang} \\
-	    \vspace*{3\baselineskip}
-	    {\LARGE Client:}  \\
-	    \vspace*{1\baselineskip}  
-	    {\LARGE Ticketmaster} \\
+	    \vspace*{2\baselineskip}
+	    {\LARGE Zhetian Sun, Zhixuan Lai, Jeffrey Ouyang} \\
 	    \vspace*{5\baselineskip}
+
 	    {\Large \today}
 	    \end{center}
 	\endgroup}
@@ -56,6 +67,6 @@
 	\input{introduction}
 	\input{overall_description}
 	\input{external_interface_requirements}
-	\input{other_nonfunctional_requirements}
+	\input{project_experience}
 	
 \end{document}

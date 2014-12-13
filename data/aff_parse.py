@@ -6,7 +6,7 @@ from json import JSONEncoder
 def openFile(filename):
     return open(filename, 'r')
 
-def parse(f):
+def parseAndPrint(f):
     artists = []
     artist = {}
     for line in f:
@@ -32,4 +32,4 @@ def parse(f):
 
 if __name__ == '__main__':
     f = openFile("rec.txt")
-    parse(f)
+    parseAndPrint(f)

@@ -1,5 +1,35 @@
 \section{Introduction }
 	\subsection{Purpose}
-	  The purpose of this Software Requirement Specifications (SRS) document is to provide a description about the features and use cases of the Ticket Tonight App 1.0. It will cover all functional and nonfunctional requirements of the product, as well as its UI and technologies being used.
+      The purpose of this Software Requirement Specifications (SRS) document is to provide a description about 
+      the features and use cases of the Tickets Tonight App 1.0. It will cover all functional and nonfunctional 
+      requirements of the product, as well as its UI and technologies being used. This document also details 
+      the internal software interfaces and external dependencies and interfaces. This document will describe 
+      the whole application system. 
 	\subsection{Project Scope}
-	  The goal of Ticket Tonight, as its name suggests, is to provide event recommendation, event search and ticket purchase service which are oriented to last minute decision. We use Ticketmaster’s own database to fetch corresponding events and infused with users affinity data, finally generate choices for events which are still available tonight.  Ticket Tonight will send notifications to inform users about events which are still available tonight, based on users’ location, preference, event date and budget, and lead users to ticket purchase page once they decide to go. 
+	  The goal of Tickets Tonight, as its name suggests, is to provide event recommendation, event search and 
+	  ticket purchase service which are oriented to last minute decisions. Ticketmaster has been generally 
+	  viewed as an endpoint for users to simply purchase the tickets to an event they already have in mind. 
+	  Now, with this application, Ticketmaster can extend its services to even the event choosing phase and 
+	  event discovery phase of a user’s whole purchasing process. Ticketmaster can better refine and cater to 
+	  users who want to buy tickets at the last minute. Ticketmaster has provided sample data through xml 
+	  files that contain artist, venue, category, and events data. Ticketmaster has also provided affinity data 
+	  which denotes several recommended artists and their scores for a given artist. These data will be used to 
+	  generate events available and provide users recommendations. Tickets Tonight will also send 
+	  notifications to inform users about events which are still available tonight, based on users’ location, 
+	  preference, event date and budget, and lead users to ticket purchase page once they have decided to go.
+	\subsection{References}
+	\label{reference}
+	  Tickets Tonight will use \href{https://parse.com/}{Parse.com} to store the data provided by 
+	  Ticketmaster. In order to access the data stored, Ticket Tonight will use Parse\rq s 
+	  \href{https://parse.com/docs/ios_guide#top/iOS}{iOS SDK}. To parse the given data from 
+	  Ticketmaster, we will be using the python 
+	  \href{https://docs.python.org/2/library/xml.etree.elementtree.html}{XML library} and 
+	  \href{https://docs.python.org/2/library/json.html}{JSON library}. Ticket Tonight app also uses iOS
+	  view controller, including 
+	  \href{https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControl
+	  	lerCatalog/Chapters/TabBarControllers.html}{TabBarController} and
+	  \href{https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/TableView_
+	  	iPhone/CreateConfigureTableView/CreateConfigureTableView.htm}{TableView}. In order to populate the 
+	  location map on Apple Maps, we use the \href{https://developer.apple.com/library/mac/documentation/CoreLocation/Reference/CLGeocoder_
+	  	class/index.html}{CLGeocoder object} 
+	  

@@ -1,0 +1,14 @@
+\section{Project Experience}
+	\subsection{Project Design and Difficulties}
+         Our initial design for the project was under the assumption that we would be receiving access to Ticketmaster’s database and API. Under 
+         this assumption, we wanted to create a great overall experience that would allow the user to actually be able to purchase the ticket 
+         through the app and connect to their Ticketmaster account in order to synchronize the product line. Our original design was using 
+         node.js as our server in order to retrieve data from Ticketmaster and have node.js serve as our platform for the data we needed on the 
+         app. We also originally wanted to connect the user favorites data to the user account on Ticketmaster’s website so ended up using an 
+         anonymous user and store favorites locally. 
+         
+         One difficulty we had was the designing of the whole application. We really wanted an intuitive way to be able to present the data to the 
+         users. Another difficulty we had was combining all the data into a coherent application. Initially we thought about combining all the data 
+         to formulate the best recommendation for the user. Another difficulty was converting an actual address to a geopoint in order to mark 
+         the location on the map. We needed the geopoint of the location instead of addresses and currently we do this conversion on the mobile 
+         device. We could potentially convert all the event locations and save their geopoint instead of the address string.

@@ -75,7 +75,7 @@ user data and favorite artists will be stored on Parse. For preliminary
 and testing purposes, the application will use anonymous users and will
 not store actual user favorites.
 
-![image](./pics/pp1.png)
+![image](./Pics/pp1.png)
 
 Production Features
 -------------------
@@ -215,7 +215,7 @@ SDK. The data feed is parsed into four sub trees. On Parse, there is the
 artist subtree, venues subtree, category subtree and events subtree. A
 section of the data file is displayed below.
 
-![image](./pics/xml1.png)
+![image](./Pics/xml1.png)
 
 For each artist, Ticketmaster has provided us the artist id, the
 category to which this artists belongs, an URL to the artist’s image
@@ -240,7 +240,7 @@ scores and corresponding artists. The artists under an entry are the
 recommended artists for the artist in question and each recommended
 artist is associated with a score ranging from 0 - 1.
 
-![image](./pics/txt1.png)
+![image](./Pics/txt1.png)
 
 The format of the file is
 
@@ -296,21 +296,21 @@ this artist is similar to. In the more tab, the user can find artists by
 category and also query all the events that are near his or her current
 location directly.
 
-![image](./pics/app1.png)
+![image](./Pics/app1.png)
 
-![image](./pics/app2.png)
+![image](./Pics/app2.png)
 
-![image](./pics/app3.png)
+![image](./Pics/app3.png)
 
-![image](./pics/app4.png)
+![image](./Pics/app4.png)
 
-![image](./pics/app5.png)
+![image](./Pics/app5.png)
 
-![image](./pics/app6.png)
+![image](./Pics/app6.png)
 
-![image](./pics/app7.png)
+![image](./Pics/app7.png)
 
-![image](./pics/app8.png)
+![image](./Pics/app8.png)
 
 Software Interfaces
 -------------------
@@ -329,7 +329,7 @@ key-value pairs we want, and the Parse backend will store it. The
 data can be viewed on the Parse app page data browser section. A sample
 is shown in the following image.
 
-<span>1.</span> ![image](./pics/parse_data_schema.png)
+<span>1.</span> ![image](./Pics/parse_data_schema.png)
 
 Tickets Tonight will query the data stored on Parse through a *PFQuery*
 object that returns the *PFObject* on Parse. The *PFQuery* can find the

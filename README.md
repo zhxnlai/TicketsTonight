@@ -298,21 +298,14 @@ this artist is similar to. In the more tab, the user can find artists by
 category and also query all the events that are near his or her current
 location directly.
 
-![image](./Pics/app1.png)
-
-![image](./Pics/app2.png)
-
-![image](./Pics/app3.png)
-
-![image](./Pics/app4.png)
-
-![image](./Pics/app5.png)
-
-![image](./Pics/app6.png)
-
-![image](./Pics/app7.png)
-
-![image](./Pics/app8.png)
+<img width="320 px" src="./Pics/app1.png"/>
+<img width="320 px" src="./Pics/app2.png"/>
+<img width="320 px" src="./Pics/app3.png"/>
+<img width="320 px" src="./Pics/app4.png"/>
+<img width="320 px" src="./Pics/app5.png"/>
+<img width="320 px" src="./Pics/app6.png"/>
+<img width="320 px" src="./Pics/app7.png"/>
+<img width="320 px" src="./Pics/app8.png"/>
 
 Software Interfaces
 -------------------
